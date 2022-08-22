@@ -1,0 +1,140 @@
+.dapp-topbar {
+  width: 100%;
+  align-items: center;
+  padding-right: 18px;
+  a,
+  button {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    margin: 6px !important;
+    min-width: fit-content !important;
+    min-height: 40px !important;
+    &#hamburger {
+      padding: 11px !important;
+    }
+    &.toggle-button {
+      padding: 9.5px !important;
+    }
+  }
+  .wallet_btn {
+    margin: 2px !important;
+    margin-right: 10px !important;
+    // margin: 0px !important;
+    padding: 0 30.5px;
+  }
+}
+
+.left-back {
+  margin-left: 180px;
+  margin-top: 5px;
+  cursor: pointer;
+  & > svg {
+    display: none;
+  }
+}
+.tablet .dapp-topbar {
+  justify-content: space-between;
+  padding: 0 8px;
+}
+.pending-txn-container {
+  display: flex;
+  align-items: center;
+  padding: 10px !important;
+  .MuiButton-label {
+    margin-right: 0;
+    transition: all 0.33s ease-out;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+#ohm-popper-pending {
+  .MuiPaper-root.ohm-menu {
+    a {
+      padding-right: 20px !important;
+    }
+  }
+}
+.caret-down {
+  position: absolute;
+  right: 0.4rem;
+}
+.hovered-button {
+  .MuiButton-label {
+    margin-right: 0.5rem;
+    transition: all 0.33s ease-out;
+  }
+}
+.topbar-link-btn {
+  &.MuiLink-underlineNone {
+    margin: 0 !important;
+  }
+}
+@media (min-width: 750px) {
+  #ohm-menu-button {
+    // width: 87px;
+    // height: 24px;
+    background: #d39b33;
+    opacity: 1;
+    color: #fff;
+    border-radius: 24px;
+  }
+}
+@media (max-width: 750px) {
+  .my-ntf {
+    height: 52px;
+    font-size: 0.875rem !important;
+    font-family: Manrope-ExtraBold, Manrope;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 52px;
+    margin-right: 20px;
+    background: linear-gradient(320.66deg, #7301b8 14.75%, #9511fd 84.81%);
+    &:hover {
+      background: linear-gradient(320.66deg, #8801da 14.75%, #a433fd 84.81%);
+    }
+    border-radius: 24px !important;
+    padding: 6px 16px !important;
+    .my-nft-num {
+      display: inline-block;
+      min-width: 30px;
+      max-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  #ohm-menu-button {
+    // width: 87px;
+    // height: 24px;
+    background: #d39b33;
+    opacity: 1;
+    color: #fff;
+    border-radius: 24px;
+  }
+  .change_padding {
+    padding: 0 8px !important;
+    font-size: 14px !important;
+  }
+}
+[title="Change locale"] {
+  box-sizing: border-box;
+  width: 40px !important;
+  padding: 3px !important;
+  min-width: 40px !important;
+  background: #3e0f79a6 !important;
+  border-radius: 13px !important;
+  &.MuiButton-containedSecondary:hover {
+    background: #290053 !important;
+  }
+  .MuiButton-label {
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    .MuiSvgIcon-fontSizeSmall {
+      width: 43px;
+      height: 43px;
+    }
+  }
+}

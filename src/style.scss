@@ -1,0 +1,817 @@
+* {
+  outline: none;
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+
+  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html,
+body,
+#root {
+  font-family: "PingFang SC";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000000 url("./assets/svg/bg_ellipse.svg") no-repeat;
+  background-position: bottom right;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  flex-direction: column;
+  z-index: 1;
+  background-size: cover;
+  font-family: "PingFang SC";
+  overflow: hidden;
+  transition: all ease 0.33ms;
+}
+button {
+  outline: none;
+  border: none;
+}
+li {
+  list-style: none;
+}
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+.MuiDrawer-paperAnchorDockedLeft {
+  border-right: 0 !important;
+}
+
+#choose-bond-view {
+  .bond-data-card {
+    .data-row {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin: 12px 0px;
+    }
+
+    .data-row-centered {
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+      margin: 12px 0px;
+
+      .marginedBtn {
+        margin: 0.3rem;
+      }
+    }
+  }
+}
+
+.ohm-card {
+  max-width: 833px;
+
+  .card-header {
+    width: 100%;
+    min-height: 33px;
+    margin-bottom: 10px;
+
+    h5 {
+      font-weight: 600 !important;
+    }
+  }
+
+  .help-text {
+    margin: 10px 0px;
+  }
+
+  .data-row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 12px 0px;
+  }
+
+  .data-row-centered {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 12px 0px;
+
+    .marginedBtn {
+      margin: 0.3rem;
+    }
+  }
+}
+
+.ohm-pairs {
+  display: flex;
+  align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield !important;
+}
+
+a:hover svg {
+  color: inherit;
+}
+
+.tooltip {
+  z-index: 9999999;
+}
+
+.makeStyles-content-7 {
+  z-index: 1;
+}
+
+.MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+  height: 34px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+@media (min-width: 750px) {
+  .global-title {
+    width: 314px;
+    height: 55px;
+    font-size: 40px;
+    font-family: Manrope-ExtraBold, Manrope;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 47px;
+    position: fixed;
+    z-index: 9000;
+    top: 20px;
+    left: 224px;
+  }
+
+  .toolBar-title {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px !important;
+  }
+
+  .MuiDrawer-paper {
+    width: 461px;
+    position: relative;
+
+    .MuiBox-root {
+      padding: 0;
+    }
+
+    .toolBar-close {
+      width: 300px;
+      height: 40px;
+      font-size: 40px !important;
+      font-family: Manrope-ExtraBold, Manrope;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 40px !important;
+    }
+
+    .MuiDivider-root {
+      display: none;
+    }
+
+    .wallet-link {
+      margin: 0;
+      width: 356px;
+      height: 20px;
+      font-size: 20px;
+      font-family: Manrope-SemiBold, Manrope;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 20px;
+      position: absolute;
+      top: 124px;
+      left: 52px;
+      border-bottom: 2px solid #d39b33;
+      padding-bottom: 19px;
+    }
+
+    .MuiTypography-h3 {
+      width: 319px;
+      height: 47px;
+      font-size: 40px;
+      font-family: Manrope-ExtraBold, Manrope;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 47px;
+      position: absolute;
+      top: 184px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    [aria-label="close wallet"] {
+      width: 46px;
+      height: 46px;
+      line-height: 31px;
+      font-size: 31px;
+      position: absolute;
+      top: 40px;
+      right: 44px;
+      padding-left: 10px;
+      padding-top: 9px;
+      background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .MuiSvgIcon-fontSizeSmall {
+        font-size: 50px;
+      }
+    }
+
+    .address-list {
+      width: 355px;
+      box-sizing: border-box;
+      position: absolute;
+      left: 57px;
+      min-height: 60px;
+      top: 275px;
+      // padding-top: 16px;
+      .address-list-item {
+        height: 60px;
+        width: 100%;
+        margin-bottom: 33px;
+        line-height: 60px;
+        position: relative;
+
+        .icon {
+          float: left;
+          height: 60px;
+          width: 60px;
+          margin-right: 14px;
+        }
+
+        .name {
+          height: 60px;
+          float: left;
+          font-size: 22px;
+          font-family: Manrope-SemiBold, Manrope;
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        .count {
+          font-size: 20px;
+          font-family: Manrope-SemiBold, Manrope;
+          font-weight: 600;
+          color: #ffffff;
+          position: absolute;
+          top: 7px;
+          right: 0;
+          line-height: 20px;
+        }
+
+        .value {
+          font-size: 14px;
+          font-family: Manrope-Regular, Manrope;
+          font-weight: 400;
+          color: #ffffff;
+          position: absolute;
+          bottom: 10px;
+          right: 0;
+          line-height: 14px;
+        }
+
+        .count-only {
+          font-size: 20px;
+          font-family: Manrope-SemiBold, Manrope;
+          font-weight: 600;
+          color: #ffffff;
+          position: absolute;
+          top: 0;
+          right: 0;
+          line-height: 60px;
+        }
+      }
+    }
+  }
+}
+#WEB3_CONNECT_MODAL_ID {
+  .fmSSut {
+    .cMFuDJ {
+      width: 256px;
+      height: 278px;
+      max-width: unset;
+      min-width: unset;
+      grid-template-columns: unset;
+      background: #23262f;
+      box-shadow: 0px 16px 64px -48px rgba(31, 47, 70, 0.4);
+      border-radius: 12px;
+      position: absolute;
+      top: 75px;
+      right: 18%;
+      .bElhDP {
+        background-color: #23262f;
+        .hKhOIm {
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0 16px;
+          background-color: #23262f !important;
+          transition: none;
+          .sc-bdvvtL {
+            width: 45px;
+          }
+          .gHoDBx {
+            width: calc(100% - 45px);
+            font-size: 14px;
+            color: #fff;
+          }
+          .eCZoDi {
+            font-size: 12px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .global-title {
+    display: none;
+  }
+  #WEB3_CONNECT_MODAL_ID {
+    .fmSSut {
+      .cMFuDJ {
+        width: 256px;
+        height: 278px;
+        max-width: unset;
+        min-width: unset;
+        grid-template-columns: unset;
+        background: #23262f;
+        box-shadow: 0px 16px 64px -48px rgba(31, 47, 70, 0.4);
+        border-radius: 12px;
+        position: absolute;
+        top: 55px;
+        right: 5%;
+      }
+    }
+  }
+  #root {
+    background-image: none;
+    background: #000;
+  }
+}
+
+.clearfix::after {
+  display: block;
+  /* 使其成为块级元素后*/
+  content: "";
+  /*为伪元素加入空内容，以便伪元素中不会有内容显示在页面中*/
+  height: 0;
+  /* 为使伪元素不影响页面布局，将伪元素高度设置为0*/
+  clear: both;
+  /* 清除浮动*/
+}
+
+.order-select {
+  background: #002f23;
+  border: 1px solid #25edbc;
+  border-radius: 50px;
+  height: 38px !important;
+  line-height: 38px !important;
+  padding: 0 13px 0 38px !important;
+  color: #fff !important;
+  position: relative;
+  float: right;
+  font-weight: 800;
+  font-family: "Manrope";
+
+  .MuiSelect-select:focus {
+    background-color: inherit;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: url("./assets/images/order.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: inset 0px 0.749682px 2.99873px #25edbc;
+  }
+
+  .MuiSelect-select {
+    color: #fff !important;
+    min-width: 5rem;
+  }
+
+  .MuiSelect-icon {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 12px;
+    height: 12px;
+    background: url("./assets/icons/desc.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  &.asc {
+    &::after {
+      background: url("./assets/icons/asc.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+// select popover 样式
+.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
+  // margin-top: 50px;
+  // margin-left: -28px;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  background: rgba(198, 198, 198, 0.08) url(./assets/images/main.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding: 5px;
+
+  .MuiList-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    li {
+      border-radius: 20px;
+      margin: 6px 0;
+      padding-right: 38px !important;
+      position: relative;
+      color: #c2c2c2;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: url("./assets/icons/desc.png");
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        right: 0.5rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      &.asc {
+        &::after {
+          background: url("./assets/icons/asc.png");
+          background-repeat: no-repeat;
+          background-size: 100%;
+          background-position: center center;
+        }
+      }
+    }
+
+    [aria-selected="true"] {
+      background: #25edbc;
+      color: #ffffff !important;
+    }
+  }
+}
+
+.btcz-btn-gradient {
+  background: linear-gradient(136deg, #126b60 14.75%, #25edbc 84.81%);
+  border-radius: 58.5075px;
+  border: 1px solid #19dd8b !important;
+  box-sizing: border-box;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: #ffffff !important;
+    background: linear-gradient(136deg, #17887a 14.75%, #54f1ca 84.81%);
+  }
+}
+
+.btcz-btn-solid {
+  border-radius: 58.5075px !important;
+  // border: 1px solid #19dd8b !important;
+  box-sizing: border-box;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  color: #dfdfdf !important;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: #ffffff !important;
+    // background-color: #25EDBC !important;
+  }
+}
+.wallet_btn {
+  background: linear-gradient(98.94deg, #00212f 0.49%, #085240 101.1%);
+  border: 0.68017px solid #25edbc;
+}
+.tab-mobile {
+  font-size: 18px;
+}
+
+.btc-card-item {
+  box-sizing: border-box;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  width: 100%;
+  // background: url("./assets/images/Rectangle\ 10.png") no-repeat;
+  background-size: 100% 100%;
+
+  .btc-card-item-img {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+    }
+
+    .tip-container {
+      position: absolute;
+      bottom: 0.3rem;
+      right: 0rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+
+      .tooltip {
+        display: none;
+      }
+
+      &:hover {
+        .tooltip {
+          display: block;
+          position: absolute;
+        }
+      }
+    }
+  }
+
+  .btc-card-item-desc {
+    // background: url("./assets/svg/Rectangle\ 2162.png") no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 5px 5px 5px;
+    margin-top: 5px;
+
+    .card-sub-container {
+      // background: url("./assets/svg/Rectangle\ 2163.png") no-repeat;
+      background-size: 100% 100%;
+      padding: 0 5px 5px 5px;
+    }
+
+    .btc-card-item-desc-title {
+      font-family: "Manrope";
+      font-style: normal;
+      font-weight: 700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 20px;
+      color: #1d1d1d;
+      position: relative;
+      top: -8px;
+    }
+
+    .btc-card-item-desc-price-box {
+      margin-top: 2px;
+
+      .btc-card-item-desc-price-item {
+        padding: 2px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .item-title {
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          color: #25edbc;
+        }
+
+        .item-price {
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: #ffffff;
+        }
+
+        .btn {
+          width: 4.4rem;
+          max-width: 4.4rem;
+          min-width: 4.4rem;
+          height: 20px;
+          line-height: 20px;
+          border-radius: 8px;
+          padding: 0 0.1rem;
+          box-sizing: border-box;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 800;
+          font-size: 10.7954px;
+          color: #ffffff;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          background: #25edbc;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+[aria-label="basic tabs example"] {
+  min-width: 300px;
+  height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  line-height: 40px;
+  background: #002f23;
+  border: 0.898734px solid #25edbc;
+  box-sizing: border-box;
+  border-radius: 40px;
+  opacity: 1;
+
+  button.MuiButtonBase-root {
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 40px;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+
+  .MuiTab-textColorInherit {
+    border-radius: 40px;
+    opacity: 1;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0;
+    margin-right: 10px;
+    transition: all 0.5s;
+
+    &:nth-child(2) {
+      margin-right: 0;
+    }
+
+    &.Mui-selected {
+      // background: url("./assets/images/main\ copy.png") no-repeat;
+      background-size: 100% 100%;
+      border-radius: 40px !important;
+      position: relative;
+      top: -1px;
+      bottom: -1px;
+    }
+  }
+}
+
+.page-title {
+  width: 314px;
+  height: 55px;
+  font-size: 40px;
+  font-family: Manrope-ExtraBold, Manrope;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 47px;
+  position: fixed;
+  z-index: 9000;
+  top: 20px;
+  left: 224px;
+}
+
+@media (max-width: 750px) {
+  [aria-label="basic tabs example"] {
+    height: 26px !important;
+    border-radius: 24px 24px 24px 24px;
+    opacity: 1;
+    min-width: 200px;
+
+    button.MuiButtonBase-root {
+      min-height: 26px !important;
+    }
+
+    .tab-mobile {
+      height: 26px;
+      line-height: 26px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 0;
+      font-size: 12px;
+      transition: all 0.5s;
+    }
+  }
+
+  .MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
+    transition: none !important;
+    transform: none !important;
+    top: 260px;
+
+    .MuiMenuItem-root {
+      min-height: auto;
+    }
+  }
+
+  .btc-item-title-container {
+    margin-bottom: 13px;
+  }
+
+  .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    min-height: auto !important;
+    height: 24px !important;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  .page-title {
+    position: sticky;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    font-family: "Varela";
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    font-size: 50px;
+    background: linear-gradient(180deg, #25edbc 0%, rgba(37, 237, 188, 0) 75.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: left;
+    text-fill-color: transparent;
+    letter-spacing: 5px;
+  }
+
+  .btc-card-item {
+    padding: 5px !important;
+  }
+}
+
+.MuiTabs-indicator {
+  display: none;
+}
+
+.MuiTabs-indicator {
+  display: none;
+}

@@ -1,0 +1,686 @@
+.sidebar {
+  min-width: 193px;
+  z-index: 2;
+  border-radius: 0 !important;
+  background: pink;
+}
+
+.MuiDrawer-paper .MuiPaper-root {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(60px);
+  border-radius: 0 !important;
+}
+
+.MuiDrawer-paper .MuiPaper-root {
+  background-color: rgba(54, 56, 64, 0.6);
+}
+.MuiDrawer-paper {
+  .dapp-sidebar {
+    height: 100%;
+    background: linear-gradient(
+      115.84deg,
+      rgba(37, 237, 188, 0) -5.09%,
+      rgba(255, 255, 255, 0.26) -5.08%,
+      rgba(255, 255, 255, 0.15) 101.74%
+    );
+    backdrop-filter: blur(114.321px);
+  }
+}
+
+.makeStyles-drawerPaper-385.makeStyles-drawerPaper-385 {
+  width: 193px;
+}
+
+.sidebar {
+  .MuiDrawer-root {
+    width: 193px;
+  }
+
+  .dapp-sidebar {
+    width: 193px;
+    height: 100%;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    // background: url(../../assets/images/side-bg.png) no-repeat center;
+    // background-size: calc(100% - 4px) calc(100% - 4px);
+    background: #393939;
+    background: linear-gradient(
+      116.29deg,
+      #393939 -29.94%,
+      rgba(255, 255, 255, 0.26) -29.93%,
+      rgba(255, 255, 255, 0.15) 101.76%
+    );
+    backdrop-filter: blur(100px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 10px;
+  }
+
+  .dapp-menu-social {
+    padding-bottom: 1rem;
+    .social-row {
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+      .social-row-icon {
+        margin-left: 26px;
+        .MuiTypography-root {
+          .MuiSvgIcon-root {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dapp-menu-social {
+  padding: 1rem;
+  .social-row {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    .social-row-icon {
+      .MuiTypography-root {
+        .MuiSvgIcon-root {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.menu-divider {
+  margin-left: 30px;
+  margin-block: 10px;
+}
+
+.dapp-sidebar-inner {
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  // border-right: 1px solid red;
+  // border-image:  ;
+  .dapp-menu-social {
+    .social_box {
+      width: 170px;
+      height: 50px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 10px;
+      border: 1px solid #25edbc;
+      background: linear-gradient(279.23deg, #1a002f -0.02%, #085240 100.02%);
+      .social-row {
+        width: 100%;
+        .social-row-icon {
+          .MuiLink-root {
+            color: #25edbc;
+            svg {
+              color: #25edbc;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.branding-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  margin: 30px 0 10px 0;
+
+  .branding-header-icon {
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.wallet-link {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: Manrope-SemiBold, Manrope;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 20px;
+  border-bottom: 2px solid #d39b33;
+
+  .avatar {
+    margin-right: 8px;
+    height: 20px;
+    border-radius: 100px;
+  }
+}
+
+.dapp-menu-top {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 10px;
+  min-height: max-content;
+
+  .dapp-nav {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+.dapp-menu-bottom {
+  height: 40vh;
+  min-height: 30vh;
+}
+
+.dapp-menu-data.discounts {
+  display: flex;
+}
+
+.dapp-menu-links {
+  min-height: 35vh;
+  align-items: center;
+}
+
+.bond-discounts {
+  text-align: left;
+  color: #999999;
+  padding-left: 33px;
+  margin-top: 8px;
+
+  a {
+    margin-top: 0.7rem;
+    margin-left: 33px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .discounts-accordion {
+    backdrop-filter: none;
+    background-color: inherit;
+    margin: 12px 0;
+
+    &:before {
+      display: none;
+    }
+
+    .MuiAccordionSummary-root {
+      padding: 0;
+      justify-content: space-between;
+      min-height: auto;
+    }
+
+    .MuiAccordionSummary-content {
+      display: block;
+      margin: 0;
+
+      .MuiTypography-body2 {
+        color: #999999;
+        margin-left: 33px;
+      }
+    }
+
+    .MuiAccordionSummary-expandIcon {
+      color: inherit;
+      height: inherit;
+      padding-top: 0;
+      padding-bottom: 0;
+      position: absolute;
+      left: 118px;
+      top: -5px;
+      transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, top 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+        transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+      &.Mui-expanded {
+        left: 120px;
+        top: -2px;
+      }
+    }
+
+    .MuiAccordionDetails-root {
+      padding: 0;
+      display: block;
+
+      .bond {
+        display: block;
+        padding: unset;
+        margin-bottom: 0 0 1px 0;
+        text-decoration: none !important;
+
+        .bond-pair-roi {
+          float: right;
+          margin-left: 33px;
+        }
+      }
+    }
+  }
+}
+
+.give-sub-menus {
+  text-align: left;
+  padding-left: 33px;
+
+  > p {
+    margin-left: 33px;
+  }
+
+  .give-option {
+    display: block;
+    padding: unset;
+    margin-bottom: 0 0 1px 0;
+    margin-left: 33px;
+  }
+}
+
+.social-row {
+  display: flex;
+  justify-content: space-around;
+  .add_margin {
+    margin-right: 100px;
+    a {
+      color: #777e90;
+      text-decoration: none;
+    }
+  }
+  .social-row-icon {
+    .MuiTypography-root {
+      .MuiSvgIcon-root {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      .MuiSvgIcon-root {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+.block1 {
+  .social-row {
+    .social-row-icon {
+      .MuiTypography-root {
+        margin-right: 4rem;
+        .MuiSvgIcon-root {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.mobile .show .dapp-sidebar {
+  .dapp-menu-links {
+    flex-flow: row !important;
+    justify-content: center !important;
+  }
+
+  .dapp-nav {
+    .dapp-menu-data.discounts {
+      margin-top: 2.5em;
+
+      .bond-discounts {
+        display: none;
+      }
+    }
+  }
+
+  // .social-row {
+  //   display: flex;
+  //   justify-content: space-around;
+  //   .social-row-icon {
+  //     .MuiTypography-root {
+  //     }
+  //   }
+  // }
+}
+
+@media (min-width: 750px) {
+  .dapp-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 2rem;
+    .menu-divider {
+      display: none;
+    }
+    .nav-item-container {
+      width: 10rem;
+      height: 3rem;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 24px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      .button-dapp-menu {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        transition: background 0.1s ease-in-out;
+        display: flex;
+        // justify-content: flex-end;
+        align-items: center;
+        padding-right: 0.5rem;
+
+        .MuiTypography-h6 {
+          // margin-top: 3.2rem;
+          margin-left: 2.5rem;
+          text-align: center;
+          & > .MuiBox-root > div {
+            width: 100%;
+          }
+          &:hover {
+            color: #25edbc;
+          }
+        }
+        &::after {
+          content: "";
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 24px;
+          display: block;
+          position: absolute;
+          left: 0.5rem;
+          // right: 0;
+          // top: 1.2rem;
+          margin: auto;
+          background: no-repeat center;
+          background-size: 24px 24px;
+        }
+      }
+      // .MuiLink-root{
+      //   display: flex;
+      //   justify-content: flex-end;
+      //   align-items: center;
+      //   padding-right: 0.5rem;
+      // }
+      .MuiLink-root.active {
+        text-decoration: none;
+        color: #fff;
+        // background: linear-gradient(189.98deg, rgba(36, 6, 73, 0.8) 18.7%, rgba(90, 29, 191, 0.584) 87.28%);
+        // box-shadow: inset 0px 1px 3px rgba(219, 174, 255, 0.65);
+        background: #000;
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        // justify-content: flex-end;
+        align-items: center;
+        padding-right: 0.5rem;
+      }
+      .MuiLink-root:hover {
+        color: #25edbc !important;
+      }
+      svg {
+        display: none !important;
+      }
+
+      &:nth-child(1) .button-dapp-menu {
+        &:after {
+          background-image: url(../../assets/icons/dashboard.svg);
+        }
+        &:hover:after,
+        &.active:after {
+          background-image: url(../../assets/icons/analysis.svg);
+        }
+      }
+
+      &:nth-child(2) .button-dapp-menu {
+        &:after {
+          background-image: url(../../assets/icons/mine.svg);
+        }
+        &:hover:after,
+        &.active:after {
+          background-image: url(../../assets/icons/Vector_16.svg);
+        }
+      }
+
+      &:nth-child(3) .button-dapp-menu {
+        &:after {
+          background-image: url(../../assets/icons/pool.svg);
+        }
+        &:hover:after,
+        &.active:after {
+          background-image: url(../../assets/icons/Polygon_new.svg);
+        }
+      }
+
+      &:nth-child(4) .button-dapp-menu {
+        &:after {
+          background-image: url(../../assets/icons/mint.svg);
+        }
+        &:hover:after,
+        &.active:after {
+          background-image: url(../../assets/icons/mintnew_active.svg);
+        }
+      }
+
+      &:nth-child(5) .button-dapp-menu {
+        &:after {
+          background-image: url(../../assets/icons/market.svg);
+        }
+        &:hover:after,
+        &.active:after {
+          background-image: url(../../assets/icons/Lock.svg);
+        }
+      }
+
+      &.makeStyles-root-18 svg {
+        margin-right: 24px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 24px;
+        vertical-align: middle;
+      }
+
+      .MuiTypography-h6 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+      .MuiLink-root.active > .MuiTypography-h6::before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 0px;
+        border-bottom: 5px solid #000;
+        border-left: -1px solid transparent;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 0 0 15px 0;
+        top: -9px;
+        left: 9.23rem;
+        z-index: 10;
+      }
+      .MuiLink-root.active > .MuiTypography-h6::after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 0px;
+        border-top: 5px solid #000;
+        border-right: -1px solid transparent;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        border-radius: 0 15px 0 0;
+        bottom: -9px;
+        left: 9.25rem;
+        z-index: 10;
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .dapp-nav {
+    .menu-divider {
+      display: none;
+    }
+    .nav-item-container {
+      margin-left: 20px;
+      height: 24px;
+      line-height: 24px;
+      margin-bottom: 40px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      position: relative;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+      padding-left: 13px;
+      .MuiLink-root {
+        padding-left: 20px;
+        &::after {
+          content: "";
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 24px;
+          display: block;
+          position: absolute;
+          left: 30px;
+          top: 13px;
+          background: no-repeat center;
+          background-size: 24px 24px;
+        }
+      }
+      .active {
+        height: 50px;
+        width: 100%;
+        text-decoration: none;
+        background: #000;
+        display: block;
+        display: flex;
+        align-items: center;
+        border-radius: 10px 0 0 10px;
+        position: relative;
+        .MuiTypography-h6 {
+          &::before {
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-bottom: 5px solid #000;
+            border-left: -1px solid transparent;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            border-radius: 0 0 15px 0;
+            top: -10.9px;
+            left: 10.96rem;
+            z-index: 10;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-top: 5px solid #000;
+            border-right: -1px solid transparent;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            border-radius: 0 15px 0 0;
+            bottom: -10px;
+            left: 11rem;
+            z-index: 10;
+          }
+        }
+        &::after {
+          left: 15px;
+        }
+      }
+      svg {
+        opacity: 0;
+      }
+      &:nth-child(1) {
+        .MuiLink-root::after {
+          background-image: url(../../assets/icons/dashboard.svg);
+        }
+        .active::after {
+          background-image: url(../../assets/icons/analysis.svg);
+        }
+      }
+
+      &:nth-child(2) {
+        .MuiLink-root::after {
+          background-image: url(../../assets/icons/mine.svg);
+        }
+        .active::after {
+          background-image: url(../../assets/icons/Vector_16.svg);
+        }
+      }
+
+      &:nth-child(3) {
+        .MuiLink-root::after {
+          background-image: url(../../assets/icons/pool.svg);
+        }
+        .active::after {
+          background-image: url(../../assets/icons/Polygon_new.svg);
+        }
+      }
+
+      &:nth-child(4) {
+        .MuiLink-root::after {
+          background-image: url(../../assets/icons/mint.svg);
+        }
+        .active::after {
+          background-image: url(../../assets/icons/mintnew_active.svg);
+        }
+      }
+
+      &:nth-child(5) {
+        .MuiLink-root::after {
+          background-image: url(../../assets/icons/market.svg);
+        }
+        .active::after {
+          background-image: url(../../assets/icons/Lock.svg);
+        }
+      }
+
+      &.makeStyles-root-18 svg {
+        margin-right: 24px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 24px;
+        vertical-align: middle;
+      }
+
+      .MuiTypography-h6 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,1212 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2022-05-22 08:59+0800\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/views/Home/foundation.tsx:124
+msgid "1. Support for the Meta Bitcoin through ecosystem development and community advocacy."
+msgstr "1. Support for the Meta Bitcoin through ecosystem development and community advocacy."
+
+#: src/views/Home/index.tsx:207
+msgid "1T market cap"
+msgstr "1T market cap"
+
+#: src/views/Home/foundation.tsx:126
+msgid "2. One BTCZ/NFT one vote to decide the development and releasing of NFTs."
+msgstr "2. One BTCZ/NFT one vote to decide the development and releasing of NFTs."
+
+#: src/views/Home/foundation.tsx:128
+msgid "3. Creating a full and comprehensive roadmap which will guide the future of Meta Bitcoin."
+msgstr "3. Creating a full and comprehensive roadmap which will guide the future of Meta Bitcoin."
+
+#: src/views/Home/foundation.tsx:119
+msgid "ABOUT THE FOUNDATION"
+msgstr "ABOUT THE FOUNDATION"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:35
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:44
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:137
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:182
+#: src/views/TreasuryDashboard/treasuryData.ts:190
+msgid "APY"
+msgstr "APY"
+
+#: src/components/TopBar/Wallet/Token.tsx:213
+msgid "Add to Wallet"
+msgstr "Add to Wallet"
+
+#: src/views/Home/index.tsx:121
+msgid "Airdrops platform & app"
+msgstr "Airdrops platform & app"
+
+#: src/views/Home/economy.tsx:59
+msgid "An innovative peer-to-peer financial system in the metaverse"
+msgstr "An innovative peer-to-peer financial system in the metaverse"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:203
+msgid "Annual Percentage Yield, is the normalized representation of an interest rate, based on a compounding period over one year. Note that APYs provided are rather ballpark level indicators and not so much precise future results."
+msgstr "Annual Percentage Yield, is the normalized representation of an interest rate, based on a compounding period over one year. Note that APYs provided are rather ballpark level indicators and not so much precise future results."
+
+#: src/views/Home/foundation.tsx:139
+msgid "BOARD"
+msgstr "BOARD"
+
+#: src/views/MyNft/Detail.tsx:481
+msgid "BUSD"
+msgstr "BUSD"
+
+#: src/views/MarketDetail/MarketDetail.tsx:458
+msgid "BUY"
+msgstr "BUY"
+
+#: src/views/Wrap/WrapCrossChain.tsx:222
+msgid "Back to Ethereum Mainnet"
+msgstr "Back to Ethereum Mainnet"
+
+#: src/views/Mine/StakedList.tsx:549
+#: src/views/Mine/Temp.tsx:815
+msgid "Batch Harvest"
+msgstr "Batch Harvest"
+
+#: src/components/Sidebar/externalUrls.tsx:27
+msgid "Bug Bounty"
+msgstr "Bug Bounty"
+
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:89
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:110
+msgid "Buy"
+msgstr "Buy"
+
+#: src/views/Home/foundation.tsx:134
+msgid "By providing the next generation decentralized financial system,"
+msgstr "By providing the next generation decentralized financial system,"
+
+#: src/views/MarketDetail/MarketDetail.tsx:384
+#: src/views/MyNft/Detail.tsx:376
+msgid "CONTRACT ADDRESS"
+msgstr "CONTRACT ADDRESS"
+
+#: src/components/TopBar/ThemeSwitch.tsx:12
+msgid "Change Theme"
+msgstr "Change Theme"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:68
+msgid "Circulating Market Cap"
+msgstr "Circulating Market Cap"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:82
+msgid "Circulating Supply"
+msgstr "Circulating Supply"
+
+#: src/views/MarketDetail/MarketDetail.tsx:359
+#: src/views/Mine/Mine.tsx:212
+#: src/views/Mine/StakedList.tsx:594
+#: src/views/Mine/StakedList.tsx:760
+#: src/views/Mine/Temp.tsx:1168
+#: src/views/Mine/UnStakedList.tsx:477
+#: src/views/Mine/UnStakedList.tsx:636
+#: src/views/Mint/Mint.tsx:153
+#: src/views/MyNft/Detail.tsx:351
+#: src/views/MyNft/MyNft.tsx:181
+msgid "Communicating with blockchain nodes..."
+msgstr "Communicating with blockchain nodes..."
+
+#: src/views/Home/foundation.tsx:43
+msgid "Community Veteran, Legal & Public Media"
+msgstr "Community Veteran, Legal & Public Media"
+
+#: src/views/Home/foundation.tsx:48
+msgid "Community Veteran, Marketing Partner"
+msgstr "Community Veteran, Marketing Partner"
+
+#: src/views/Home/foundation.tsx:98
+msgid "Community Veteran, Public K Media & marketing"
+msgstr "Community Veteran, Public K Media & marketing"
+
+#: src/views/Home/foundation.tsx:38
+msgid "Community Veteran, Public Relations"
+msgstr "Community Veteran, Public Relations"
+
+#: src/views/Mine/StakedList.tsx:730
+#: src/views/Mine/Temp.tsx:1137
+#: src/views/Mine/UnStakedList.tsx:606
+msgid "Confirm"
+msgstr "Confirm"
+
+#: src/components/ConnectButton/ConnectButton.tsx:10
+#: src/components/TopBar/Wallet/index.tsx:11
+msgid "Connect Wallet"
+msgstr "Connect Wallet"
+
+#: src/views/Wrap/WrapCrossChain.tsx:189
+msgid "Connect your wallet"
+msgstr "Connect your wallet"
+
+#: src/views/Mine/StakedList.tsx:606
+#: src/views/Mine/Temp.tsx:1053
+#: src/views/Mine/UnStakedList.tsx:525
+msgid "Consumption"
+msgstr "Consumption"
+
+#: src/views/MarketDetail/MarketDetail.tsx:442
+#: src/views/Mint/Mint.tsx:101
+#: src/views/MyNft/Detail.tsx:433
+msgid "Consumption:"
+msgstr "Consumption:"
+
+#: src/components/TokenAllowanceGuard/hooks/useApproveToken.ts:22
+msgid "Contract doesn't exist on current network. Please switch networks."
+msgstr "Contract doesn't exist on current network. Please switch networks."
+
+#: src/views/MarketDetail/MarketDetail.tsx:61
+#: src/views/MyNft/Detail.tsx:91
+msgid "Copied!"
+msgstr "Copied!"
+
+#: src/views/Mine/StakedList.tsx:124
+msgid "Cost"
+msgstr "Cost"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:191
+msgid "Current"
+msgstr "Current"
+
+#: src/views/Wrap/WrapCrossChain.tsx:170
+msgid "Current Index"
+msgstr "Current Index"
+
+#: src/views/Pool/Pool.tsx:22
+msgid "DUBAI"
+msgstr "DUBAI"
+
+#: src/views/Pool/Pool.tsx:24
+msgid "DUBAI Pool"
+msgstr "DUBAI Pool"
+
+#: src/components/Sidebar/NavContent.tsx:35
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:49
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: src/views/Market/Market.tsx:70
+msgid "Date"
+msgstr "Date"
+
+#: src/views/MarketDetail/MarketDetail.tsx:435
+#: src/views/Mint/Mint.tsx:99
+#: src/views/MyNft/Detail.tsx:427
+msgid "Description:"
+msgstr "Description:"
+
+#: src/views/Home/index.tsx:161
+msgid "Development of ASIC miner"
+msgstr "Development of ASIC miner"
+
+#: src/views/Home/index.tsx:157
+msgid "Development of FPGA miner"
+msgstr "Development of FPGA miner"
+
+#: src/views/Home/index.tsx:135
+msgid "Development of payment use cases"
+msgstr "Development of payment use cases"
+
+#: src/components/TopBar/Wallet/InitialWalletView.tsx:40
+msgid "Disconnect"
+msgstr "Disconnect"
+
+#: src/components/Sidebar/externalUrls.tsx:22
+msgid "Docs"
+msgstr "Docs"
+
+#: src/views/Mine/StakedList.tsx:119
+msgid "Earned"
+msgstr "Earned"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:219
+msgid "Earned MFuel"
+msgstr "Earned MFuel"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:232
+msgid "Earned MFuel Net Worth"
+msgstr "Earned MFuel Net Worth"
+
+#: src/components/HomeLayout/index.tsx:61
+#: src/components/HomeLayout/index.tsx:164
+msgid "Economy"
+msgstr "Economy"
+
+#: src/slices/PendingTxnsSlice.ts:37
+msgid "Editing sOHM donation amount"
+msgstr "Editing sOHM donation amount"
+
+#: src/components/HomeLayout/index.tsx:113
+#: src/components/HomeLayout/index.tsx:132
+msgid "Enter App"
+msgstr "Enter App"
+
+#: src/views/Wrap/WrapCrossChain.tsx:112
+msgid "Enter an amount"
+msgstr "Enter an amount"
+
+#: src/views/Home/index.tsx:215
+msgid "Expand BTCZ metaverse to art, finance, entertainment, and tech"
+msgstr "Expand BTCZ metaverse to art, finance, entertainment, and tech"
+
+#: src/views/Home/index.tsx:350
+msgid "Explore for more."
+msgstr "Explore for more."
+
+#: src/views/Home/index.tsx:99
+msgid "External audits"
+msgstr "External audits"
+
+#: src/views/Mine/UnStakedList.tsx:317
+msgid "Fail to batch stake"
+msgstr "Fail to batch stake"
+
+#: src/views/Mine/StakedList.tsx:353
+#: src/views/Mine/Temp.tsx:531
+msgid "Fail to batch withdraw"
+msgstr "Fail to batch withdraw"
+
+#: src/views/Mine/Mine.tsx:105
+msgid "Fail to be approved"
+msgstr "Fail to be approved"
+
+#: src/views/MarketDetail/MarketDetail.tsx:268
+msgid "Fail to buy"
+msgstr "Fail to buy"
+
+#: src/views/Mine/Temp.tsx:339
+#: src/views/MyNft/Detail.tsx:192
+msgid "Fail to get info"
+msgstr "Fail to get info"
+
+#: src/views/MyNft/MyNft.tsx:100
+msgid "Fail to get list"
+msgstr "Fail to get list"
+
+#: src/views/Mine/StakedList.tsx:392
+#: src/views/Mine/Temp.tsx:571
+msgid "Fail to harvest"
+msgstr "Fail to harvest"
+
+#: src/views/Mine/Mine.tsx:116
+#: src/views/Mine/Temp.tsx:607
+msgid "Fail to harvest all"
+msgstr "Fail to harvest all"
+
+#: src/views/Mine/StakedList.tsx:410
+#: src/views/Mine/Temp.tsx:589
+msgid "Fail to harvest batch"
+msgstr "Fail to harvest batch"
+
+#: src/views/Mint/Mint.tsx:60
+#: src/views/Mint/Mint.tsx:71
+msgid "Fail to mint"
+msgstr "Fail to mint"
+
+#: src/views/MyNft/Detail.tsx:255
+msgid "Fail to sell"
+msgstr "Fail to sell"
+
+#: src/views/Mine/Temp.tsx:477
+#: src/views/Mine/Temp.tsx:495
+#: src/views/Mine/UnStakedList.tsx:299
+msgid "Fail to stake"
+msgstr "Fail to stake"
+
+#: src/views/MyNft/Detail.tsx:272
+msgid "Fail to transfer"
+msgstr "Fail to transfer"
+
+#: src/views/MarketDetail/MarketDetail.tsx:319
+msgid "Fail to unlist"
+msgstr "Fail to unlist"
+
+#: src/views/Mine/StakedList.tsx:336
+#: src/views/Mine/Temp.tsx:513
+msgid "Fail to unstake"
+msgstr "Fail to unstake"
+
+#: src/views/Mine/StakedList.tsx:369
+#: src/views/Mine/StakedList.tsx:374
+#: src/views/Mine/Temp.tsx:548
+#: src/views/Mine/Temp.tsx:553
+msgid "Fail to withdraw all"
+msgstr "Fail to withdraw all"
+
+#: src/views/MarketDetail/MarketDetail.tsx:63
+#: src/views/MyNft/Detail.tsx:93
+msgid "Failed, please click to Copy!"
+msgstr "Failed, please click to Copy!"
+
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:63
+msgid "First time staking"
+msgstr "First time staking"
+
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:69
+msgid "First time unstaking"
+msgstr "First time unstaking"
+
+#: src/views/Wrap/WrapCrossChain.tsx:101
+msgid "First time wrapping to"
+msgstr "First time wrapping to"
+
+#: src/components/Sidebar/externalUrls.tsx:12
+msgid "Forum"
+msgstr "Forum"
+
+#: src/components/HomeLayout/index.tsx:65
+#: src/components/HomeLayout/index.tsx:167
+msgid "Foundation"
+msgstr "Foundation"
+
+#: src/components/HomeLayout/index.tsx:143
+msgid "Get more out of"
+msgstr "Get more out of"
+
+#: src/slices/PendingTxnsSlice.ts:35
+msgid "Giving sOHM"
+msgstr "Giving sOHM"
+
+#: src/components/Sidebar/externalUrls.tsx:17
+msgid "Governance"
+msgstr "Governance"
+
+#: src/components/Sidebar/externalUrls.tsx:32
+msgid "Grants"
+msgstr "Grants"
+
+#: src/views/Home/foundation.tsx:53
+#: src/views/Home/foundation.tsx:58
+msgid "Growth Partner"
+msgstr "Growth Partner"
+
+#: src/views/Home/index.tsx:204
+msgid "H1 2024"
+msgstr "H1 2024"
+
+#: src/views/Mine/StakedList.tsx:631
+#: src/views/Mine/Temp.tsx:901
+msgid "Harvest"
+msgstr "Harvest"
+
+#: src/views/Mine/Mine.tsx:147
+#: src/views/Mine/Temp.tsx:742
+msgid "Harvest BTCZ"
+msgstr "Harvest BTCZ"
+
+#: src/views/Mine/StakedList.tsx:606
+#: src/views/Mine/Temp.tsx:1035
+#: src/views/Mine/UnStakedList.tsx:507
+msgid "HashRate"
+msgstr "HashRate"
+
+#: src/views/MarketDetail/MarketDetail.tsx:438
+#: src/views/Mint/Mint.tsx:100
+#: src/views/MyNft/Detail.tsx:430
+msgid "Hashrate:"
+msgstr "Hashrate:"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:201
+msgid "Holders, represents the total number of Ohmies (sOHM holders)"
+msgstr "Holders, represents the total number of Ohmies (sOHM holders)"
+
+#: src/views/Home/index.tsx:286
+msgid "In 2022, Meta Satoshi Nakamoto launched BTCZ, a decentralized digital currency in the metaverse."
+msgstr "In 2022, Meta Satoshi Nakamoto launched BTCZ, a decentralized digital currency in the metaverse."
+
+#: src/views/Home/index.tsx:179
+msgid "Integration with DeFi applications"
+msgstr "Integration with DeFi applications"
+
+#: src/views/Home/index.tsx:139
+msgid "Intense marketing & community push"
+msgstr "Intense marketing & community push"
+
+#: src/views/MyNft/Detail.tsx:161
+msgid "Invalid tokenId"
+msgstr "Invalid tokenId"
+
+#: src/views/Home/index.tsx:65
+msgid "Launch of Meta Bitcoin"
+msgstr "Launch of Meta Bitcoin"
+
+#: src/views/Home/index.tsx:95
+msgid "Listing on DEX"
+msgstr "Listing on DEX"
+
+#: src/views/Home/index.tsx:125
+msgid "Listing on major exchanges"
+msgstr "Listing on major exchanges"
+
+#: src/views/Mine/StakedList.tsx:681
+#: src/views/Mine/UnStakedList.tsx:558
+#: src/views/MyNft/MyNft.tsx:227
+msgid "Loading More ..."
+msgstr "Loading More ..."
+
+#: src/components/HomeLayout/index.tsx:57
+#: src/components/HomeLayout/index.tsx:161
+#: src/components/TopBar/Wallet/InitialWalletView.tsx:157
+#: src/views/Home/economy.tsx:81
+#: src/views/Home/economy.tsx:127
+#: src/views/Home/index.tsx:333
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:75
+msgid "BTCZ"
+msgstr "BTCZ"
+
+#: src/views/Home/index.tsx:143
+msgid "BTCZ DeFi launch"
+msgstr "BTCZ DeFi launch"
+
+#: src/views/Home/index.tsx:69
+msgid "BTCZ Foundation"
+msgstr "BTCZ Foundation"
+
+#: src/views/Home/index.tsx:263
+msgid "BTCZ Genesis Block Launch: May 3, 2022"
+msgstr "BTCZ Genesis Block Launch: May 3, 2022"
+
+#: src/views/Mine/StakedList.tsx:622
+msgid "BTCZ Mined"
+msgstr "BTCZ Mined"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:40
+msgid "BTCZ Price"
+msgstr "BTCZ Price"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:206
+msgid "BTCZ Reward"
+msgstr "BTCZ Reward"
+
+#: src/views/Home/index.tsx:175
+msgid "BTCZ cross chain bridge"
+msgstr "BTCZ cross chain bridge"
+
+#: src/views/Home/index.tsx:91
+msgid "BTCZ genesis block; first BTCZ mined"
+msgstr "BTCZ genesis block; first BTCZ mined"
+
+#: src/views/Home/index.tsx:211
+msgid "BTCZ investment fund and trust"
+msgstr "BTCZ investment fund and trust"
+
+#: src/views/Home/index.tsx:193
+msgid "BTCZ metaverse ecosystem launch"
+msgstr "BTCZ metaverse ecosystem launch"
+
+#: src/views/Mine/Mine.tsx:156
+#: src/views/Mine/Temp.tsx:751
+msgid "BTCZ mined"
+msgstr "BTCZ mined"
+
+#: src/views/Home/index.tsx:83
+msgid "BTCZ miner M-1 series release"
+msgstr "BTCZ miner M-1 series release"
+
+#: src/views/Home/index.tsx:189
+msgid "BTCZ mining in 3D metaverse"
+msgstr "BTCZ mining in 3D metaverse"
+
+#: src/views/Home/index.tsx:288
+#~ msgid ""
+#~ "BTCZ mining requires hash power from NFT miners using next-gen proof-of-NFT validation with zero energy\n"
+#~ "consumption."
+#~ msgstr ""
+#~ "BTCZ mining requires hash power from NFT miners using next-gen proof-of-NFT validation with zero energy\n"
+#~ "consumption."
+
+#: src/views/Home/index.tsx:288
+msgid "BTCZ mining requires hash power from NFT miners using next-gen proof-of-NFT validation with zero energy consumption."
+msgstr "BTCZ mining requires hash power from NFT miners using next-gen proof-of-NFT validation with zero energy consumption."
+
+#: src/views/Home/index.tsx:113
+msgid "BTCZ pool P-1 series release"
+msgstr "BTCZ pool P-1 series release"
+
+#: src/views/Home/index.tsx:73
+msgid "BTCZ roadshow debut"
+msgstr "BTCZ roadshow debut"
+
+#: src/views/Market/Market.tsx:253
+msgid "META BITCOIN NFT"
+msgstr "META BITCOIN NFT"
+
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:96
+msgid "MFUEL"
+msgstr "MFUEL"
+
+#: src/components/TopBar/Wallet/InitialWalletView.tsx:163
+#: src/views/Home/economy.tsx:92
+#: src/views/Home/economy.tsx:142
+#: src/views/Home/index.tsx:346
+msgid "MFuel"
+msgstr "MFuel"
+
+#: src/views/Mine/StakedList.tsx:648
+#: src/views/Mine/Temp.tsx:918
+msgid "MFuel Cost"
+msgstr "MFuel Cost"
+
+#: src/views/Mine/Mine.tsx:162
+#: src/views/Mine/Temp.tsx:757
+msgid "ZFUEL cost"
+msgstr "ZFUEL cost"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:192
+msgid "Market SLP"
+msgstr "Market SLP"
+
+#: src/views/Home/foundation.tsx:68
+msgid "Marketing and business analyst"
+msgstr "Marketing and business analyst"
+
+#: src/views/Mint/Mint.tsx:139
+#: src/views/Wrap/WrapCrossChain.tsx:116
+msgid "Max"
+msgstr "Max"
+
+#: src/views/Home/foundation.tsx:73
+msgid "Meta Agent & Philosopher"
+msgstr "Meta Agent & Philosopher"
+
+#: src/views/Home/economy.tsx:130
+msgid "Meta Bitcoin provides a decentralized way to store,"
+msgstr "Meta Bitcoin provides a decentralized way to store,"
+
+#: src/views/Home/economy.tsx:84
+msgid "Meta Bitcoin provides a decentralized way to store, account, and exchange values in the metaverse"
+msgstr "Meta Bitcoin provides a decentralized way to store, account, and exchange values in the metaverse"
+
+#: src/views/Home/index.tsx:283
+msgid "Meta Bitcoin?"
+msgstr "Meta Bitcoin?"
+
+#: src/views/Home/economy.tsx:95
+#: src/views/Home/economy.tsx:145
+msgid "Meta Fuel is the energy resource for mining in the metaverse"
+msgstr "Meta Fuel is the energy resource for mining in the metaverse"
+
+#: src/views/Home/index.tsx:296
+msgid "Meta White Paper"
+msgstr "Meta White Paper"
+
+#: src/views/Mine/StakedList.tsx:612
+#: src/views/Mine/UnStakedList.tsx:490
+msgid "Meta-Intel Pentium"
+msgstr "Meta-Intel Pentium"
+
+#: src/views/MarketDetail/MarketDetail.tsx:380
+#: src/views/MarketDetail/MarketDetail.tsx:431
+#: src/views/MyNft/Detail.tsx:372
+#: src/views/MyNft/Detail.tsx:423
+msgid "Meta-Intel Pentium 4"
+msgstr "Meta-Intel Pentium 4"
+
+#: src/views/MyNft/MyNft.tsx:217
+msgid "Meta-Intel Pentium 4 #"
+msgstr "Meta-Intel Pentium 4 #"
+
+#: src/components/HomeLayout/index.tsx:145
+msgid "MetaBitcoin"
+msgstr "MetaBitcoin"
+
+#: src/views/Home/index.tsx:109
+msgid "Metabitcointalk.com the world's first Web3 forum for BTCZ"
+msgstr "Metabitcointalk.com the world's first Web3 forum for BTCZ"
+
+#: src/components/Sidebar/NavContent.tsx:36
+#: src/views/Mine/Mine.tsx:139
+#: src/views/Mine/Temp.tsx:734
+msgid "Mine"
+msgstr "Mine"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:154
+msgid "Mined BTCZ"
+msgstr "Mined BTCZ"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:169
+msgid "Mined BTCZ Net Worth"
+msgstr "Mined BTCZ Net Worth"
+
+#: src/views/Mint/Mint.tsx:105
+msgid "MinerToken"
+msgstr "MinerToken"
+
+#: src/views/Mine/Mine.tsx:196
+msgid "Miners in wallet"
+msgstr "Miners in wallet"
+
+#: src/views/Home/index.tsx:117
+msgid "Mining UX improvement"
+msgstr "Mining UX improvement"
+
+#: src/components/Sidebar/NavContent.tsx:38
+#: src/views/Mint/Mint.tsx:109
+msgid "Mint"
+msgstr "Mint"
+
+#: src/components/TopBar/MyNft.tsx:10
+msgid "My Bag:"
+msgstr "My Bag:"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:194
+msgid "My Mining HashRate"
+msgstr "My Mining HashRate"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:246
+msgid "My NFT Miners"
+msgstr "My NFT Miners"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:260
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:274
+msgid "My NFT Pools"
+msgstr "My NFT Pools"
+
+#: src/components/TopBar/Wallet/InitialWalletView.tsx:191
+msgid "My Wallet"
+msgstr "My Wallet"
+
+#: src/components/Sidebar/NavContent.tsx:39
+msgid "NFT Market"
+msgstr "NFT Market"
+
+#: src/components/TopBar/Wallet/InitialWalletView.tsx:169
+#: src/views/Home/economy.tsx:103
+#: src/views/Home/economy.tsx:150
+#: src/views/Home/index.tsx:362
+msgid "NFT Miner"
+msgstr "NFT Miner"
+
+#: src/views/Home/economy.tsx:106
+#: src/views/Home/economy.tsx:153
+msgid "NFT Miner mines BTCZ by providing hash power"
+msgstr "NFT Miner mines BTCZ by providing hash power"
+
+#: src/views/Market/Market.tsx:254
+msgid "NFT Miner mines BTCZ by providing hash power using proof-of-NFT"
+msgstr "NFT Miner mines BTCZ by providing hash power using proof-of-NFT"
+
+#: src/views/Home/economy.tsx:116
+#: src/views/Home/economy.tsx:166
+#: src/views/Home/index.tsx:375
+msgid "NFT Pool"
+msgstr "NFT Pool"
+
+#: src/views/Home/economy.tsx:119
+#: src/views/Home/economy.tsx:169
+msgid "NFT Pool empowers miners by receiving and burning MFuels"
+msgstr "NFT Pool empowers miners by receiving and burning MFuels"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:197
+msgid "NFT Total Value + Circulating Market Cap"
+msgstr "NFT Total Value + Circulating Market Cap"
+
+#: src/views/Wrap/Wrap.tsx:21
+msgid "Network Error"
+msgstr "Network Error"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:96
+msgid "Next Halving Countdown"
+msgstr "Next Halving Countdown"
+
+#: src/views/Mine/UnStakedList.tsx:553
+msgid "No Miners in the Wallet"
+msgstr "No Miners in the Wallet"
+
+#: src/views/MarketDetail/MarketDetail.tsx:136
+msgid "Nonexistent tokenId"
+msgstr "Nonexistent tokenId"
+
+#: src/components/Chart/CustomTooltip.tsx:53
+msgid "Not staked"
+msgstr "Not staked"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:166
+msgid "OHM Staked"
+msgstr "OHM Staked"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:202
+msgid "OHM Staked is the ratio of sOHM to circulating supply of OHM (staked vs total)"
+msgstr "OHM Staked is the ratio of sOHM to circulating supply of OHM (staked vs total)"
+
+#: src/views/MarketDetail/MarketDetail.tsx:393
+#: src/views/MyNft/Detail.tsx:385
+msgid "ORIGINAL"
+msgstr "ORIGINAL"
+
+#: src/views/MarketDetail/MarketDetail.tsx:464
+#: src/views/MyNft/Detail.tsx:451
+msgid "Owner"
+msgstr "Owner"
+
+#: src/views/404/NotFound.tsx:16
+msgid "Page not found"
+msgstr "Page not found"
+
+#: src/views/Home/index.tsx:380
+msgid "Partners"
+msgstr "Partners"
+
+#: src/views/Home/foundation.tsx:93
+msgid "Peacemaker"
+msgstr "Peacemaker"
+
+#: src/slices/PendingTxnsSlice.ts:48
+#: src/slices/PendingTxnsSlice.ts:52
+#: src/slices/PendingTxnsSlice.ts:56
+msgid "Pending..."
+msgstr "Pending..."
+
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:65
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:71
+msgid "Please approve Olympus Dao to use your"
+msgstr "Please approve Olympus Dao to use your"
+
+#: src/views/Wrap/WrapCrossChain.tsx:104
+msgid "Please approve Olympus to use your"
+msgstr "Please approve Olympus to use your"
+
+#: src/slices/GiveThunk.ts:73
+#: src/slices/GiveThunk.ts:115
+msgid "Please connect your wallet"
+msgstr "Please connect your wallet"
+
+#: src/slices/GiveThunk.ts:180
+#: src/slices/GiveThunk.ts:257
+#: src/slices/GiveThunk.ts:334
+#: src/slices/RedeemThunk.ts:38
+#: src/slices/RedeemThunk.ts:91
+msgid "Please connect your wallet!"
+msgstr "Please connect your wallet!"
+
+#: src/views/MyNft/Detail.tsx:511
+msgid "Please enter the address to transfer"
+msgstr "Please enter the address to transfer"
+
+#: src/views/MyNft/Detail.tsx:469
+msgid "Please enter the price"
+msgstr "Please enter the price"
+
+#: src/views/MyNft/Detail.tsx:474
+msgid "Please enter the price equal or more than"
+msgstr "Please enter the price equal or more than"
+
+#: src/views/Wrap/Wrap.tsx:26
+msgid "Please switch network to Binance Smart Chain Mainnet!"
+msgstr "Please switch network to Binance Smart Chain Mainnet!"
+
+#: src/slices/RedeemThunk.ts:96
+msgid "Please switch to testnet!"
+msgstr "Please switch to testnet!"
+
+#: src/components/Sidebar/NavContent.tsx:37
+#: src/views/Pool/Pool.tsx:18
+#: src/views/Pool/Pool.tsx:23
+msgid "Pool"
+msgstr "Pool"
+
+#: src/views/Market/Market.tsx:65
+#: src/views/MarketDetail/MarketDetail.tsx:446
+#: src/views/Wrap/WrapCrossChain.tsx:165
+msgid "Price"
+msgstr "Price"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:138
+msgid "Protocol Owned Liquidity OHM-DAI"
+msgstr "Protocol Owned Liquidity OHM-DAI"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:200
+msgid "Protocol Owned Liquidity, is the amount of LP the treasury owns and controls. The more POL the better for the protocol and its users."
+msgstr "Protocol Owned Liquidity, is the amount of LP the treasury owns and controls. The more POL the better for the protocol and its users."
+
+#: src/views/Home/index.tsx:132
+msgid "Q1 2023"
+msgstr "Q1 2023"
+
+#: src/views/Home/index.tsx:62
+msgid "Q2 2022"
+msgstr "Q2 2022"
+
+#: src/views/Home/index.tsx:150
+msgid "Q2 2023"
+msgstr "Q2 2023"
+
+#: src/views/Home/index.tsx:80
+msgid "Q3 2022"
+msgstr "Q3 2022"
+
+#: src/views/Home/index.tsx:168
+msgid "Q3 2023"
+msgstr "Q3 2023"
+
+#: src/views/Home/index.tsx:106
+msgid "Q4 2022"
+msgstr "Q4 2022"
+
+#: src/views/Home/index.tsx:186
+msgid "Q4 2023"
+msgstr "Q4 2023"
+
+#: src/views/Home/foundation.tsx:63
+msgid "Reality Reinforcer"
+msgstr "Reality Reinforcer"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:112
+msgid "Risk Free Value of Treasury Assets"
+msgstr "Risk Free Value of Treasury Assets"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:199
+msgid "Risk Free Value, is the amount of funds the treasury guarantees to use for backing OHM."
+msgstr "Risk Free Value, is the amount of funds the treasury guarantees to use for backing OHM."
+
+#: src/views/Home/index.tsx:392
+msgid "Roadmap"
+msgstr "Roadmap"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:193
+msgid "Runway Available"
+msgstr "Runway Available"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:204
+msgid "Runway, is the number of days sOHM emissions can be sustained at a given rate. Lower APY = longer runway"
+msgstr "Runway, is the number of days sOHM emissions can be sustained at a given rate. Lower APY = longer runway"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:192
+msgid "SLP Treasury"
+msgstr "SLP Treasury"
+
+#: src/views/MyNft/Detail.tsx:444
+msgid "Sell"
+msgstr "Sell"
+
+#: src/views/Mine/Temp.tsx:1071
+#: src/views/Mine/UnStakedList.tsx:543
+msgid "Stake"
+msgstr "Stake"
+
+#: src/views/Mine/Temp.tsx:958
+#: src/views/Mine/UnStakedList.tsx:440
+msgid "Stake Miners"
+msgstr "Stake Miners"
+
+#: src/components/Chart/CustomTooltip.tsx:46
+msgid "Staked"
+msgstr "Staked"
+
+#: src/views/Mine/Mine.tsx:191
+msgid "Staked Miners"
+msgstr "Staked Miners"
+
+#: src/views/Home/index.tsx:153
+msgid "Staking & Mining related products"
+msgstr "Staking & Mining related products"
+
+#: src/slices/PendingTxnsSlice.ts:30
+msgid "Staking OHM"
+msgstr "Staking OHM"
+
+#: src/views/Mine/UnStakedList.tsx:313
+msgid "Success to batch stake"
+msgstr "Success to batch stake"
+
+#: src/views/Mine/StakedList.tsx:349
+#: src/views/Mine/Temp.tsx:527
+msgid "Success to batch withdraw"
+msgstr "Success to batch withdraw"
+
+#: src/views/MarketDetail/MarketDetail.tsx:264
+msgid "Success to buy"
+msgstr "Success to buy"
+
+#: src/views/Mine/StakedList.tsx:388
+#: src/views/Mine/Temp.tsx:567
+msgid "Success to harvest"
+msgstr "Success to harvest"
+
+#: src/views/Mine/Mine.tsx:112
+#: src/views/Mine/Temp.tsx:603
+msgid "Success to harvest all"
+msgstr "Success to harvest all"
+
+#: src/views/Mine/StakedList.tsx:406
+#: src/views/Mine/Temp.tsx:585
+msgid "Success to harvest batch"
+msgstr "Success to harvest batch"
+
+#: src/views/Mint/Mint.tsx:66
+msgid "Success to mint"
+msgstr "Success to mint"
+
+#: src/views/MyNft/Detail.tsx:251
+msgid "Success to sell"
+msgstr "Success to sell"
+
+#: src/views/Mine/Temp.tsx:472
+#: src/views/Mine/Temp.tsx:491
+#: src/views/Mine/UnStakedList.tsx:294
+msgid "Success to stake"
+msgstr "Success to stake"
+
+#: src/views/MyNft/Detail.tsx:269
+msgid "Success to transfer"
+msgstr "Success to transfer"
+
+#: src/views/MarketDetail/MarketDetail.tsx:315
+msgid "Success to unlist"
+msgstr "Success to unlist"
+
+#: src/views/Mine/StakedList.tsx:332
+#: src/views/Mine/Temp.tsx:509
+msgid "Success to unstake"
+msgstr "Success to unstake"
+
+#: src/views/Mine/StakedList.tsx:366
+#: src/views/Mine/Temp.tsx:545
+msgid "Success to withdraw all"
+msgstr "Success to withdraw all"
+
+#: src/components/TokenAllowanceGuard/hooks/useApproveToken.ts:31
+msgid "Successfully approved"
+msgstr "Successfully approved"
+
+#: src/views/Home/index.tsx:197
+msgid "Support BTCZ DeFi/GameFi/SocialFi applications"
+msgstr "Support BTCZ DeFi/GameFi/SocialFi applications"
+
+#: src/views/MyNft/Detail.tsx:494
+msgid "Sure to Sell"
+msgstr "Sure to Sell"
+
+#: src/views/MyNft/Detail.tsx:523
+msgid "Sure to transfer"
+msgstr "Sure to transfer"
+
+#: src/views/MarketDetail/MarketDetail.tsx:405
+#: src/views/MyNft/Detail.tsx:397
+msgid "TOKEN ID"
+msgstr "TOKEN ID"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:13
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:22
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:54
+#: src/views/TreasuryDashboard/treasuryData.ts:186
+msgid "TVL Total Value Locked"
+msgstr "TVL Total Value Locked"
+
+#: src/views/Home/foundation.tsx:122
+msgid "The BTCZ Foundation is a TDAO established to provide:"
+msgstr "The BTCZ Foundation is a TDAO established to provide:"
+
+#: src/views/Home/index.tsx:254
+msgid "The Next Generation Crypto Providing a Cross-chain Trust Standard in the Metaverse"
+msgstr "The Next Generation Crypto Providing a Cross-chain Trust Standard in the Metaverse"
+
+#: src/views/TreasuryDashboard/components/Graph/Graph.js:47
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:186
+msgid "The annual percentage yield (APY)"
+msgstr "The annual percentage yield (APY)"
+
+#: src/views/Home/foundation.tsx:78
+msgid "The director"
+msgstr "The director"
+
+#: src/views/Market/Market.tsx:344
+msgid "The market is temporarily closed."
+msgstr "The market is temporarily closed."
+
+#: src/views/Home/index.tsx:292
+#~ msgid ""
+#~ "The maximum supply of BTCZ is 21,000,000. Mining rewards are 50BTCZ per 10mins initially and will be\n"
+#~ "halved every four years."
+#~ msgstr ""
+#~ "The maximum supply of BTCZ is 21,000,000. Mining rewards are 50BTCZ per 10mins initially and will be\n"
+#~ "halved every four years."
+
+#: src/views/Home/index.tsx:291
+msgid "The maximum supply of BTCZ is 21,000,000. Mining rewards are 50BTCZ per 10mins initially and will be halved every four years."
+msgstr "The maximum supply of BTCZ is 21,000,000. Mining rewards are 50BTCZ per 10mins initially and will be halved every four years."
+
+#: src/views/Home/foundation.tsx:83
+msgid "TheCuteDictator"
+msgstr "TheCuteDictator"
+
+#: src/views/Home/foundation.tsx:88
+msgid "TheLibertyWalk"
+msgstr "TheLibertyWalk"
+
+#: src/components/Chart/Chart.tsx:528
+#: src/components/Chart/ExpandedChart.tsx:58
+msgid "Today"
+msgstr "Today"
+
+#: src/components/TokenAllowanceGuard/hooks/useApproveToken.ts:21
+msgid "Token doesn't exist on current network. Please switch networks."
+msgstr "Token doesn't exist on current network. Please switch networks."
+
+#: src/views/Market/Market.tsx:60
+#: src/views/Mine/StakedList.tsx:114
+#: src/views/Mine/UnStakedList.tsx:112
+#: src/views/MyNft/MyNft.tsx:36
+msgid "TokenId"
+msgstr "TokenId"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:26
+msgid "Total Market Cap"
+msgstr "Total Market Cap"
+
+#: src/views/TreasuryDashboard/treasuryData.ts:198
+msgid "Total Mining Hashrate"
+msgstr "Total Mining Hashrate"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:123
+msgid "Total Value Deposited"
+msgstr "Total Value Deposited"
+
+#: src/views/MyNft/Detail.tsx:439
+msgid "Transfer"
+msgstr "Transfer"
+
+#: src/views/Wrap/WrapCrossChain.tsx:197
+msgid "Transform"
+msgstr "Transform"
+
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:77
+#: src/views/TreasuryDashboard/TreasuryDashboard.tsx:98
+msgid "USD"
+msgstr "USD"
+
+#: src/views/MarketDetail/MarketDetail.tsx:454
+msgid "Unlist"
+msgstr "Unlist"
+
+#: src/views/Mine/StakedList.tsx:666
+#: src/views/Mine/Temp.tsx:936
+msgid "Unstake"
+msgstr "Unstake"
+
+#: src/views/Mine/StakedList.tsx:557
+#: src/views/Mine/Temp.tsx:823
+msgid "Unstake Miners"
+msgstr "Unstake Miners"
+
+#: src/slices/PendingTxnsSlice.ts:30
+msgid "Unstaking sOHM"
+msgstr "Unstaking sOHM"
+
+#: src/slices/PendingTxnsSlice.ts:42
+msgid "Unwrapping sOHM"
+msgstr "Unwrapping sOHM"
+
+#: src/views/Home/foundation.tsx:131
+msgid "Vision"
+msgstr "Vision"
+
+#: src/views/TreasuryDashboard/components/Metric/Metric.tsx:109
+msgid "Volume (24h)"
+msgstr "Volume (24h)"
+
+#: src/views/Market/Market.tsx:277
+msgid "Volume traded"
+msgstr "Volume traded"
+
+#: src/views/Home/index.tsx:87
+msgid "Web3 DApp & NFT market launch"
+msgstr "Web3 DApp & NFT market launch"
+
+#: src/views/Home/index.tsx:282
+msgid "What is"
+msgstr "What is"
+
+#: src/slices/PendingTxnsSlice.ts:38
+msgid "Withdrawing sOHM donation"
+msgstr "Withdrawing sOHM donation"
+
+#: src/views/Wrap/WrapCrossChain.tsx:148
+msgid "Wrap / Unwrap"
+msgstr "Wrap / Unwrap"
+
+#: src/slices/PendingTxnsSlice.ts:42
+msgid "Wrapping OHM"
+msgstr "Wrapping OHM"
+
+#: src/slices/RedeemThunk.ts:69
+#: src/slices/RedeemThunk.ts:127
+msgid "You have no yield that can be redeemed."
+msgstr "You have no yield that can be redeemed."
+
+#: src/slices/GiveThunk.ts:231
+#: src/slices/GiveThunk.ts:308
+msgid "You may be trying to give more than your balance! Error code: 32603. Message: ds-math-sub-underflow"
+msgstr "You may be trying to give more than your balance! Error code: 32603. Message: ds-math-sub-underflow"
+
+#: src/views/Mine/Mine.tsx:151
+msgid "You need enough MFuel at your wallet in order to harvest. If you have more than 30 staked NFTs, consider using Harvest Batch"
+msgstr "You need enough MFuel at your wallet in order to harvest. If you have more than 30 staked NFTs, consider using Harvest Batch"
+
+#: src/views/Home/economy.tsx:131
+msgid "account, and exchange values in the metaverse"
+msgstr "account, and exchange values in the metaverse"
+
+#: src/views/Wrap/WrapCrossChain.tsx:227
+msgid "ethereum.chainName"
+msgstr "ethereum.chainName"
+
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:65
+msgid "for staking"
+msgstr "for staking"
+
+#: src/views/Wrap/WrapCrossChain.tsx:104
+msgid "for this transaction."
+msgstr "for this transaction."
+
+#: src/components/TokenAllowanceGuard/TokenAllowanceGuard.tsx:72
+msgid "for unstaking"
+msgstr "for unstaking"
+
+#: src/views/Wrap/WrapCrossChain.tsx:102
+#: src/views/Wrap/WrapCrossChain.tsx:157
+#: src/views/Wrap/WrapCrossChain.tsx:197
+msgid "gOHM"
+msgstr "gOHM"
+
+#: src/views/Wrap/WrapCrossChain.tsx:215
+msgid "gOHM Balance"
+msgstr "gOHM Balance"
+
+#: src/views/Home/foundation.tsx:136
+msgid "our vision is to build the Meta Bitcoin standard in the metaverse."
+msgstr "our vision is to build the Meta Bitcoin standard in the metaverse."
+
+#: src/views/Wrap/WrapCrossChain.tsx:197
+msgid "to"
+msgstr "to"
+
+#: src/views/Home/economy.tsx:108
+#: src/views/Home/economy.tsx:155
+msgid "using proof-of-NFT"
+msgstr "using proof-of-NFT"
+
+#: src/views/Home/index.tsx:171
+msgid "wMBTC token launch"
+msgstr "wMBTC token launch"
+
+#: src/views/Wrap/WrapCrossChain.tsx:197
+msgid "wsOHM"
+msgstr "wsOHM"
+
+#: src/views/Wrap/WrapCrossChain.tsx:210
+msgid "wsOHM Balance"
+msgstr "wsOHM Balance"

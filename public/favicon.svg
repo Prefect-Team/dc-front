@@ -1,0 +1,13 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="ohm" fill-rule="evenodd" clip-rule="evenodd" d="M19.5455 50V49.8864V47.4891V40.5306C12.4238 38.2889 7.27273 31.776 7.27273 24.0909C7.27273 14.55" />
+<style>
+    #ohm {
+      fill: black;
+    }
+    @media (prefers-color-scheme: dark) {
+      #ohm {
+        fill: white;
+      }
+    }
+  </style>
+</svg>

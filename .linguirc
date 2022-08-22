@@ -1,0 +1,12 @@
+{
+   "locales": ["en", "ko", "ja", "th"],
+   "sourceLocale": "en",
+   "catalogs": [{
+      "path": "src/locales/translations/mbtc-frontend/{locale}/messages",
+      "include": ["src"]
+   }],
+   "fallbackLocales": {
+      "default": "en"
+   },
+   "format": "po"
+}
