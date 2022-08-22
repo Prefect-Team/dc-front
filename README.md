@@ -1,4 +1,4 @@
-# [Quint Frontend]
+# [DC Frontend]
 
 ## 🔧 Setting up Local Development
 
