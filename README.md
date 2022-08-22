@@ -9,7 +9,7 @@ Required:
 - [Git](https://git-scm.com/downloads)
 
 ```bash
-$ git clone https://github.com/Prefect-Team/quint-front.git
+$ git clone https://github.com/Prefect-Team/dc-front.git
 $ cd quint-front
 
 # set up your environment variables
