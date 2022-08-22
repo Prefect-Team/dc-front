@@ -10,7 +10,7 @@ Required:
 
 ```bash
 $ git clone https://github.com/Prefect-Team/dc-front.git
-$ cd quint-front
+$ cd dc-front
 
 # set up your environment variables
 # read the comments in the .env files for what is required/optional
