@@ -1,4 +1,4 @@
-# [Quint Frontend]
+# [DC Frontend]
 
 ## 🔧 Setting up Local Development
 
@@ -9,8 +9,8 @@ Required:
 - [Git](https://git-scm.com/downloads)
 
 ```bash
-$ git clone https://github.com/Prefect-Team/quint-front.git
-$ cd quint-front
+$ git clone https://github.com/Prefect-Team/dc-front.git
+$ cd dc-front
 
 # set up your environment variables
 # read the comments in the .env files for what is required/optional
