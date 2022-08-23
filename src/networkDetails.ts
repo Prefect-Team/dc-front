@@ -22,6 +22,9 @@ export enum NetworkId {
 
   BSC = 56,
   BSC_TESTNET = 97,
+
+  TRON = 199,
+  TRON_TESTNET = 1029,
 }
 
 interface IAddresses {
@@ -195,6 +198,13 @@ export const addresses: IAddresses = {
   [NetworkId.BSC_TESTNET]: {
     GOHM_ADDRESS: "0x91fa20244fb509e8289ca630e5db3e9166233fdc",
   },
+
+  [NetworkId.TRON]: {
+    GOHM_ADDRESS: "TCRGxYFN2Q3awGh5Ws2yNe2Nt1V4zY92sN",
+  },
+  [NetworkId.TRON_TESTNET]: {
+    GOHM_ADDRESS: "TCRGxYFN2Q3awGh5Ws2yNe2Nt1V4zY92sN",
+  },
 };
 
 /**
@@ -366,6 +376,35 @@ export const NETWORKS: { [key: number]: INetwork } = {
     image: polygon,
     imageAltText: "BSC Logo",
     uri: () => Providers.getProviderUrl(NetworkId.BSC_TESTNET),
+  },
+  // torn
+  [NetworkId.TRON]: {
+    chainName: "TRON Chain Mainnet",
+    chainId: 199,
+    nativeCurrency: {
+      name: "TRON",
+      symbol: "TRX",
+      decimals: 18,
+    },
+    rpcUrls: ["https://tronscan.org"],
+    blockExplorerUrls: ["https://api.trongrid.io"],
+    image: polygon,
+    imageAltText: "TRON Logo",
+    uri: () => Providers.getProviderUrl(NetworkId.TRON),
+  },
+  [NetworkId.TRON_TESTNET]: {
+    chainName: "TRON_TESTNET Chain Testnet",
+    chainId: 1029,
+    nativeCurrency: {
+      name: "TRON TEST",
+      symbol: "tTRX",
+      decimals: 18,
+    },
+    rpcUrls: ["https://shasta.tronscan.org"],
+    blockExplorerUrls: ["https://api.shasta.trongrid.io"],
+    image: polygon,
+    imageAltText: "TRON Logo",
+    uri: () => Providers.getProviderUrl(NetworkId.TRON_TESTNET),
   },
 };
 

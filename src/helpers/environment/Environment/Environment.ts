@@ -93,6 +93,16 @@ export class Environment {
           key: `REACT_APP_BSC_TESTNET_NODE_URL`,
           fallback: "https://data-seed-prebsc-1-s1.binance.org:8545",
         });
+      case NetworkId.TRON:
+        return this._get({
+          key: `REACT_APP_TRON_NODE_URL`,
+          fallback: "https://api.trongrid.io",
+        });
+      case NetworkId.TRON_TESTNET:
+        return this._get({
+          key: `REACT_APP_TRON_TESTNET_NODE_URL`,
+          fallback: "https://api.shasta.trongrid.io",
+        });
     }
   };
 

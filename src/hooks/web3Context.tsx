@@ -114,8 +114,8 @@ const initModal = new Web3Modal({
       package: true,
       connector: async () => {
         let provider = null;
-        if (typeof window.BinanceChain !== "undefined") {
-          provider = window.BinanceChain;
+        if (typeof (window as any).tronWeb !== "undefined") {
+          provider = (window as any).tronWeb;
           try {
             await provider.request({ method: "eth_requestAccounts" });
           } catch (error) {
