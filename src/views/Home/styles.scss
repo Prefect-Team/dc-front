@@ -1,7 +1,252 @@
 .block1 {
   height: 100vh;
-}
-.isMobile {
-  .block1 {
+  width: 100%;
+  position: relative;
+  .video_box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    video {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    // z-index: -1;
   }
+  .container_box {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 280px;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    .top_box {
+      width: 793px;
+      height: 490px;
+      // background: linear-gradient(
+      //   110.76deg,
+      //   rgba(255, 255, 255, 0.35) 2.51%,
+      //   rgba(0, 0, 0, 0.26) 2.52%,
+      //   rgba(0, 0, 0, 0.15) 99.14%
+      // );
+      background: rgba(122, 122, 122, 0.9);
+      border-radius: 64px;
+      backdrop-filter: blur(50);
+      padding: 55px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .top_cont {
+        display: flex;
+        align-items: center;
+        img {
+          width: 58px;
+          height: 58px;
+        }
+        .title {
+          font-family: "SK Concretica";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 40px;
+          line-height: 44px;
+          color: #ffffff;
+          margin-left: 16px;
+        }
+      }
+      .bottom_cont {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .left {
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 40px;
+          line-height: 55px;
+          color: #acacac;
+        }
+        .right {
+          ul {
+            li {
+              margin-top: 13px;
+              .title {
+                font-family: "Manrope";
+                font-style: normal;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 27px;
+                text-align: right;
+                text-transform: uppercase;
+                color: #ffffff;
+              }
+              .content {
+                font-family: "Manrope";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 107.1%;
+                text-align: right;
+                color: #ffffff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bottom_box {
+      width: 793px;
+      height: 78px;
+      border-radius: 40px;
+      margin-top: 180px;
+      padding: 25px 20px;
+      box-sizing: border-box;
+      border: 2px solid rgba(255, 255, 255, 0.31);
+      background: linear-gradient(116.29deg, rgba(98, 98, 98, 0.28) -16.91%, rgba(0, 0, 0, 0.28) 101.76%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .buy_box {
+        display: flex;
+        .left_input {
+          width: 197px;
+          height: 37px;
+          display: flex;
+          align-items: center;
+          background: #8a8a8a;
+          box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.3);
+          border-radius: 20px;
+          padding: 12px;
+          box-sizing: border-box;
+          button {
+            border: 1px solid #fff;
+            width: 39px;
+            height: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+          }
+          .input_box {
+            flex: 1;
+            .MuiInput-formControl {
+              height: 100%;
+              input {
+                height: 100%;
+                font-family: "DM Mono";
+                font-style: normal;
+                font-size: 14px;
+                line-height: 37px;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .action_box {
+          width: 119px;
+          height: 35px;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: url("../../assets/images/btn_bg.png") no-repeat center;
+          background-size: cover;
+          font-family: "SK Concretica";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 22px;
+          color: #ffffff;
+          margin-left: 16px;
+        }
+      }
+      .sell_box {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.isMobile {
+  width: 100%;
+  .block1 {
+    width: 100%;
+    .container_box {
+      width: 100%;
+      top: 100px;
+      .top_box {
+        width: 96%;
+        height: 535px;
+        border-radius: 40px;
+        margin: 0 auto;
+        padding: 30px 34px;
+        .top_cont {
+          img {
+            width: 44px;
+            height: 44px;
+          }
+          .title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28.4891px;
+            line-height: 31px;
+            font-family: "PingFang SC";
+            color: #ffffff;
+          }
+        }
+        .bottom_cont {
+          .left {
+            width: 241px;
+            height: 46px;
+            font-family: "PingFang SC";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 33.5703px;
+            line-height: 46px;
+            color: #acacac;
+            transform: rotate(90deg);
+            margin-bottom: 75px;
+            margin-left: -100px;
+          }
+          .right {
+            ul {
+              li {
+                .title {
+                  font-size: 16.1998px;
+                }
+                .content {
+                  font-size: 16.1998px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .bottom_box {
+        width: 96%;
+        flex-direction: column;
+        background: none;
+        border: none;
+        margin-top: 80px;
+        .sell_box {
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: none !important;
+}
+.MuiInput-underline:before {
+  border-bottom: none !important;
+}
+.MuiInput-underline::after {
+  border-bottom: none !important;
 }
