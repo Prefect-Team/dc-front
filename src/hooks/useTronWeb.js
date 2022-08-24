@@ -87,7 +87,7 @@ export default function useTronWeb() {
 
       // Wallet account dis-connection
       if (e.data.message && e.data.message.action === "disconnect") {
-        // console.log("disconnection", e.data.message)
+        console.log("disconnection", e);
         // console.log("tronWeb", window.tronWeb)
         // console.log("tronLink", window.tronLink)
         setTronWeb(() => getTronWebState());
@@ -169,6 +169,13 @@ export default function useTronWeb() {
       msg: data.message,
     });
   }
-
-  return { isTronWeb, userAddress, event, getConnect };
+  function handleDisConnect() {
+    setTronWeb({
+      installed: false,
+      connected: false,
+      host: "",
+    });
+    setUserAddress("");
+  }
+  return { isTronWeb, userAddress, event, getConnect, handleDisConnect };
 }

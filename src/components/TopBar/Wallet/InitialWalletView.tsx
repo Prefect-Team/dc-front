@@ -23,10 +23,20 @@ import { Encrypt } from "src/helpers/aes";
 import baseUrl from "src/helpers/baseUrl";
 import { CUR_NETWORK_ID } from "src/constants/network";
 import { bnToNum, formatMBTC } from "src/helpers";
+import useTronWeb from "src/hooks/useTronWeb";
 const DisconnectButton = () => {
-  const { disconnect } = useWeb3Context();
+  const { userAddress, isTronWeb, handleDisConnect } = useTronWeb();
+
+  const { disconnect, connected } = useWeb3Context();
+  const disconnectWallet = () => {
+    if (connected) {
+      disconnect();
+    } else {
+      handleDisConnect();
+    }
+  };
   return (
-    <Button onClick={disconnect} className="disconnectd_btn" variant="contained" size="large" color="secondary">
+    <Button onClick={disconnectWallet} className="disconnectd_btn" variant="contained" size="large" color="secondary">
       <Trans>Disconnect</Trans>
     </Button>
   );
@@ -146,7 +156,7 @@ const WalletTotalValue = () => {
         <div className="address-list-item">
           <div className="first_item">
             <img src={DClogo} className="icon" />
-            <div className="name">{t`Quint`}</div>
+            <div className="name">{t`UXDT`}</div>
           </div>
           <div className="count-only">{quintBalance}</div>
         </div>

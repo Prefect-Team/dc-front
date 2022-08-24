@@ -28,8 +28,8 @@ export function Wallet() {
   const [isWalletOpen, setWalletOpen] = useState(false);
   const closeWallet = () => setWalletOpen(false);
   const { connect, connected, address } = useWeb3Context();
+  const { userAddress, isTronWeb } = useTronWeb();
   const openWallet = () => {
-    console.log(123);
     setWalletOpen(!isWalletOpen);
   };
   // only enable backdrop transition on ios devices,
@@ -39,8 +39,8 @@ export function Wallet() {
   return (
     <div className={isWalletOpen ? "wallet_box" : "wallet_box cancle_bg"}>
       <WalletButton openWallet={openWallet} />
-      {!connected ? <WalletChose /> : null}
-      {connected ? (
+      {!connected && !isTronWeb.connected ? <WalletChose /> : null}
+      {connected || isTronWeb.connected ? (
         <div className={isWalletOpen ? "wallet_container open_wallet" : "wallet_container"}>
           <InitialWalletView onClose={closeWallet} />
         </div>

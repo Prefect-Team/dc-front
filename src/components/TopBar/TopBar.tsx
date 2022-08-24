@@ -10,7 +10,6 @@ import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
 import ArrowBackIosRoundedIcon from "@material-ui/icons/ArrowBackIosRounded";
 import { locales, selectLocale } from "../../locales";
 import { useLocation, useHistory } from "react-router-dom";
-import MyNft from "./MyNft";
 // import ThemeSwitcher from "./ThemeSwitch";
 import Wallet from "./Wallet";
 
@@ -80,7 +79,7 @@ function TopBar({ theme, toggleTheme, handleDrawerToggle }: TopBarProps) {
           <SvgIcon fontSize="large" style={{ color: "#FFFFFF" }} component={ArrowBackIosRoundedIcon} />
         </Box>
         <Box display="flex">
-          <MyNft />
+          {/* <MyNft /> */}
           <Wallet />
           {/* <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} /> */}
           <LocaleSwitcher
