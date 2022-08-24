@@ -87,8 +87,12 @@
     }
     .wallet_btn {
       color: #fff;
-      background: linear-gradient(225deg, #3772ff 14.89%, #3772ff 85.85%);
-      border-radius: 50px;
+      background: linear-gradient(315.27deg, #dcdcdc 9.83%, #898989 88.84%);
+      border-radius: 100px;
+      transform: rotate(-180deg);
+      .MuiButton-label {
+        transform: rotate(180deg);
+      }
     }
     .nft_btn {
       background: #58bd7d;

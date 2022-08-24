@@ -8,7 +8,7 @@ import MenuClose from "../../assets/icons/nav-close.svg";
 // import Social from "../../components/Sidebar/Social";
 import Wallet from "../TopBar/Wallet";
 import Messages from "../Messages/Messages";
-import MyNft from "../TopBar/MyNft";
+// import MyNft from "../TopBar/MyNft";
 import {
   AppBar,
   Container,
@@ -101,14 +101,14 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                 </Box>
               ) : (
                 <Box className="right_con">
-                  <MyNft />
+                  {/* <MyNft /> */}
                   <Wallet />
                   <MenuIcon aria-haspopup="true" onClick={handleOpenNavMenu} className="menu-icon"></MenuIcon>
                 </Box>
               )}
             </Box>
             <Box sx={{ justifyContent: "flex-end", display: { xs: "none", md: "flex" } }} className="top_btnbox">
-              <MyNft />
+              {/* <MyNft /> */}
               <Wallet />
             </Box>
           </Toolbar>

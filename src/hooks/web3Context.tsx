@@ -9,7 +9,6 @@ import Web3Modal from "web3modal";
 import { NetworkId, NETWORKS } from "../constants";
 
 import BianceWalletLogo from "../assets/images/binance-wallet.png";
-import TronLogo from "../assets/images/tron_logo.png";
 import { CUR_NETWORK_ID } from "src/constants/network";
 
 /**
@@ -101,28 +100,6 @@ const initModal = new Web3Modal({
           }
         } else {
           throw new Error("No Binance Chain Wallet found");
-        }
-        return provider;
-      },
-    },
-    "custom-tronchainwallet": {
-      display: {
-        logo: TronLogo,
-        name: "TRON Chain Wallet",
-        description: "Connect to your Tron Chain Wallet",
-      },
-      package: true,
-      connector: async () => {
-        let provider = null;
-        if (typeof (window as any).tronWeb !== "undefined") {
-          provider = (window as any).tronWeb;
-          try {
-            await provider.request({ method: "eth_requestAccounts" });
-          } catch (error) {
-            throw new Error("User Rejected");
-          }
-        } else {
-          throw new Error("No TRON Chain Wallet found");
         }
         return provider;
       },

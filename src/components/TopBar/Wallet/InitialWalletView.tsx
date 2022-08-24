@@ -132,9 +132,6 @@ const WalletTotalValue = () => {
   useEffect(() => {
     try {
       if (provider && userAddress && networkId === CUR_NETWORK_ID) {
-        // getMBTCToken();
-        // getMfuel();
-        // getNftNum();
         getCoinNum();
       }
     } catch (err) {
@@ -145,13 +142,6 @@ const WalletTotalValue = () => {
   return (
     <Box className="tooBar-container toobar_container" onClick={() => setCurrency(currency === "USD" ? "OHM" : "USD")}>
       <WalletAddressEns />
-      {/* <Typography variant="h3" style={{ fontWeight: 700, color: "#fff", cursor: "pointer" }} className="tooBar-price">
-        {!isLoading ? (
-          `$ ${formatNumber(mbtcPrice * Number(mbtcBalance), 2)}`
-        ) : (
-          <Skeleton variant="text" width={"100%"} />
-        )}
-      </Typography> */}
       <div className="address-list">
         <div className="address-list-item">
           <div className="first_item">
@@ -159,22 +149,7 @@ const WalletTotalValue = () => {
             <div className="name">{t`Quint`}</div>
           </div>
           <div className="count-only">{quintBalance}</div>
-          {/* <div className="value">≈$10000</div> */}
         </div>
-        {/* <div className="address-list-item">
-          <div className="first_item">
-            <img src={MFuelIcon} className="icon" />
-            <div className="name">{t`ZFUEL`}</div>
-          </div>
-          <div className="count-only">{mfuelBalance}</div>
-        </div> */}
-        {/* <div className="address-list-item">
-          <div className="first_item">
-            <img src={NtfIcon} className="icon" />
-            <div className="name">{t`NFT Miner`}</div>
-          </div>
-          <div className="count-only">{num}</div>
-        </div> */}
       </div>
     </Box>
   );
