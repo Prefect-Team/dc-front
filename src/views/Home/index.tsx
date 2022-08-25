@@ -30,11 +30,15 @@ export function Home() {
   const [loading, setLoading] = useState(false);
   const [luntime, setLunchTime] = useState(1661111648);
   const [buyValue, setBuyValue] = useState("");
+  const [sellValue, setSellValue] = useState("");
   const [usdxPrice, setUsdxPrice] = useState("1.00000001");
   const [balance, setBalance] = useState("0.00000000");
   const [worth, setWorth] = useState("0.00000000");
   const handleChangeBuyValue = (e: any) => {
     setBuyValue(e.target.value);
+  };
+  const handleChangeSellValue = (e: any) => {
+    setSellValue(e.target.value);
   };
   // get luntime
   const getLunchTime = async () => {
@@ -59,9 +63,10 @@ export function Home() {
       const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
       const tx = await uxdtContract.balanceOf(address);
       console.log(tx);
-      const balanceVal = bnToNum(tx).toFixed(8);
-      setBalance(balanceVal);
-      console.log(tx, "tx", balanceVal);
+      const balanceVal = bnToNum(tx);
+      const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
+      setBalance(val);
+      console.log(tx, "tx", val);
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -79,14 +84,38 @@ export function Home() {
       console.log(txCB, "tx");
       if (txCB.status) {
         const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-        const tx = await uxdtContract.Buy(buyValue);
+        const submitValue = new BN(buyValue).multipliedBy(new BN(10).pow(18)).toString();
+        const tx = await uxdtContract.Buy(submitValue);
+        const tx2cb = await tx.wait();
+        if (tx2cb.status) {
+          setTimeout(() => window.location.reload(), 1);
+        }
         console.log(tx, "[]===");
       }
       setLoading(false);
     } catch (err) {
       console.log({ err });
       setLoading(false);
-      dispatch(error(t`Fail to Purchase`));
+      dispatch(error(t`Fail to buy`));
+    }
+  };
+  // sell
+  const sellAction = async () => {
+    setLoading(true);
+    try {
+      const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+      const submitValue = new BN(sellValue).multipliedBy(new BN(10).pow(18)).toString();
+      const tx = await uxdtContract.Sell(submitValue);
+      const txcb = await tx.wait();
+      if (txcb.status) {
+        setTimeout(() => window.location.reload(), 1);
+      }
+      console.log(tx, "[]===");
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to sell`));
     }
   };
   useEffect(() => {
@@ -160,11 +189,18 @@ export function Home() {
             <div className="buy_box sell_box">
               <div className="left_input">
                 <FormControl variant="standard" className="input_box add_margin">
-                  <Input placeholder="Amount" id="component-simple" value={buyValue} onChange={handleChangeBuyValue} />
+                  <Input
+                    placeholder="Amount"
+                    id="component-simple"
+                    value={sellValue}
+                    onChange={handleChangeSellValue}
+                  />
                 </FormControl>
                 <button>Max</button>
               </div>
-              <button className="action_box">Sell</button>
+              <button className="action_box" onClick={sellAction}>
+                Sell
+              </button>
             </div>
           </div>
         </div>
