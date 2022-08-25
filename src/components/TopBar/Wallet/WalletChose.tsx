@@ -4,7 +4,7 @@ import trxUrl from "../../../assets/images/TRX.png";
 import { useWeb3Context } from "src/hooks/web3Context";
 import useTronWeb from "src/hooks/useTronWeb";
 function WalletChose() {
-  const { connect, connected, address } = useWeb3Context();
+  const { connect, connected, address, disconnect } = useWeb3Context();
   const { getConnect, userAddress, isTronWeb, event } = useTronWeb();
   const walletList = [
     { name: "BSC", imgUrl: bscUrl },
@@ -14,6 +14,7 @@ function WalletChose() {
   const collectWallet = (item: any) => {
     console.log(item);
     if (item.name == "TRX") {
+      disconnect();
       getConnect();
     } else {
       connect();

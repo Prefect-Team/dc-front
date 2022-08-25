@@ -10,6 +10,7 @@ import Mint from "./Mint.json";
 import Referral from "./Referral.json";
 import Nft from "./NFT.json";
 import ERC20 from "./ERC20.json";
+import DigitalCurrency from "./DigitalCurrency.json";
 
 export const ERC721Pausable_ABI = ERC721Pausable.abi;
 export const MBTCStaking_ABI = MBTCStaking.abi;
@@ -24,6 +25,7 @@ export const Mint_ABI = Mint.abi;
 export const Referral_ABI = Referral.abi;
 export const Nft_ABI = Nft.abi;
 export const ERC20_ABI = ERC20;
+export const DigitalCurrency_ABI = DigitalCurrency.abi;
 
 // production
 export const MBTCStaking_ADDRESS = "0x14bC11c85Dcd4b47CD15A8510B33b312140688B8";
@@ -37,7 +39,7 @@ export const BUSD_ADDRESS = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
 export const factory_ADDRESS = "0xdaF107Cb6CBc9402F58C266E6632528d38C29612";
 export const Mint_ADDRESS = "0x55Ff3e6f223aaa82a6df6e94194fE3d1828183F1";
 // new
-export const ERC20_ADDRESS = "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee";
+export const ERC20_ADDRESS = "0xFB21be76CB7f33c11D0892793b969400E6E695fE";
 export const Referral_ADDRESS = "0x27CBE1B9fA97AC3767b4b94A86478728E0855c7a";
 export const Nft_ADDRESS = "0x8dBA178b1bC399e1b0ab51D8E3cAE5e11c0ED366";
 
@@ -54,5 +56,6 @@ export const Nft_ADDRESS = "0x8dBA178b1bC399e1b0ab51D8E3cAE5e11c0ED366";
 // export const ERC20_ADDRESS = "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee";
 // export const Referral_ADDRESS = "0xFfB89194788aA05AC283074dcE44ae9846183B6b";
 // export const Nft_ADDRESS = "0xc9D7a953992c4B861c5A9b9D5d0cE67bAc5DfeF8";
+export const UXDT_ADDRESS = "0x9124B3614eeD6A94370fe0700252e021e01B0a97";
 
 export const POOL_ID = "1";
