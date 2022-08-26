@@ -267,6 +267,10 @@ export const formatMBTC = (number: number, precision = 0) => {
   return a.toFixed(precision);
 };
 
+export const formatUxdt = (number: number, precision = 0) => {
+  const a = new BigNumberEther(number).multipliedBy(Math.pow(10, 18));
+  return a.toFixed(precision);
+};
 // export const getImage = () => {
 //   return NFTIMAGE;
 // };

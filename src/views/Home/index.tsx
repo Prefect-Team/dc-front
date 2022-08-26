@@ -19,7 +19,7 @@ import { error } from "../../slices/MessagesSlice";
 import { useDispatch } from "react-redux";
 import { DigitalCurrency_ABI, ERC20_ABI, UXDT_ADDRESS, USD_ADDRESS, BSC_USD_ADDRESS } from "src/contract";
 import { ethers } from "ethers";
-import { bnToNum } from "src/helpers";
+import { bnToNum, formatUxdt } from "src/helpers";
 import BN from "bignumber.js";
 export function Home() {
   const maxInt = new BN("2").pow(new BN("256").minus(new BN("1")));
@@ -36,6 +36,7 @@ export function Home() {
   const [usdxPrice, setUsdxPrice] = useState("1.00000001");
   const [balance, setBalance] = useState("0.00000000");
   const [worth, setWorth] = useState("0.00000000");
+  console.log(formatUxdt(1000), "测试");
   const handleChangeBuyValue = (e: any) => {
     setBuyValue(e.target.value);
   };
@@ -86,7 +87,8 @@ export function Home() {
       console.log(txCB, "tx");
       if (txCB.status) {
         const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-        const submitValue = new BN(buyValue).multipliedBy(new BN(10).pow(18)).toString();
+        // const submitValue = new BN(buyValue).multipliedBy(new BN(10).pow(18)).toString();
+        const submitValue = formatUxdt(Number(buyValue));
         const tx = await uxdtContract.Buy(submitValue);
         const tx2cb = await tx.wait();
         if (tx2cb.status) {
@@ -106,7 +108,8 @@ export function Home() {
     setLoading(true);
     try {
       const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-      const submitValue = new BN(sellValue).multipliedBy(new BN(10).pow(18)).toString();
+      // const submitValue = new BN(sellValue).multipliedBy(new BN(10).pow(18)).toString();
+      const submitValue = formatUxdt(Number(sellValue));
       const tx = await uxdtContract.Sell(submitValue);
       const txcb = await tx.wait();
       if (txcb.status) {
