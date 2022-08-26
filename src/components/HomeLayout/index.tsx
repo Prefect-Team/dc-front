@@ -27,7 +27,7 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 // ExpandMore as ExpandMoreIcon
-import { Menu as MenuIcon } from "@material-ui/icons";
+// import { Menu as MenuIcon } from "@material-ui/icons";
 
 import Headroom from "headroom.js";
 import { useWeb3Context } from "src/hooks/web3Context";
@@ -103,7 +103,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                 <Box className="right_con">
                   {/* <MyNft /> */}
                   <Wallet />
-                  <MenuIcon aria-haspopup="true" onClick={handleOpenNavMenu} className="menu-icon"></MenuIcon>
+                  {/* <MenuIcon aria-haspopup="true" onClick={handleOpenNavMenu} className="menu-icon"></MenuIcon> */}
                 </Box>
               )}
             </Box>

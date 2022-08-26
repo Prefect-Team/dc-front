@@ -192,6 +192,7 @@
         }
       }
       .wallet-link {
+        display: flex;
         margin: 0;
         // padding: 0 10px;
         width: 100%;
@@ -252,11 +253,18 @@
 @media (max-width: 750px) {
   .wallet_box {
     .wallet_btn {
+      color: #fff;
+      background: linear-gradient(315.27deg, #dcdcdc 9.83%, #898989 88.84%);
+      border-radius: 100px;
+      transform: rotate(-180deg);
+      .MuiButton-label {
+        transform: rotate(180deg);
+      }
     }
   }
   .wallet_container {
-    top: 45px;
-    left: -166px;
+    top: 60px;
+    left: -60px;
     .init_box {
       .toolBar-title {
         padding-left: 10px;

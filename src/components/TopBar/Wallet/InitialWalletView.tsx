@@ -17,26 +17,17 @@ import { useAppSelector, useWeb3Context } from "src/hooks";
 import useCurrentTheme from "src/hooks/useTheme";
 import DClogo from "../../../assets/images/dc_logo.png";
 import WalletAddressEns from "./WalletAddressEns";
-import { Referral_ADDRESS, Referral_ABI, ERC20_ABI } from "src/contract";
+import { DigitalCurrency_ABI, UXDT_ADDRESS } from "src/contract";
 import { useDispatch } from "react-redux";
 import { Encrypt } from "src/helpers/aes";
 import baseUrl from "src/helpers/baseUrl";
-import { CUR_NETWORK_ID } from "src/constants/network";
-import { bnToNum, formatMBTC } from "src/helpers";
-import useTronWeb from "src/hooks/useTronWeb";
+// import { CUR_NETWORK_ID } from "src/constants/network";
+import { bnToNum } from "src/helpers";
+import BN from "bignumber.js";
 const DisconnectButton = () => {
-  const { userAddress, isTronWeb, handleDisConnect } = useTronWeb();
-
   const { disconnect, connected } = useWeb3Context();
-  const disconnectWallet = () => {
-    if (connected) {
-      disconnect();
-    } else {
-      handleDisConnect();
-    }
-  };
   return (
-    <Button onClick={disconnectWallet} className="disconnectd_btn" variant="contained" size="large" color="secondary">
+    <Button onClick={disconnect} className="disconnectd_btn" variant="contained" size="large" color="secondary">
       <Trans>Disconnect</Trans>
     </Button>
   );
@@ -60,6 +51,7 @@ const WalletTotalValue = () => {
   const [mfuelBalance, setMfuelBalance] = useState<string>("0");
   const [ERC20Address, setERC20Address] = useState("");
   const [quintBalance, setQuintBalance] = useState("0");
+  const [balance, setBalance] = useState("0.00000000");
   const [num, setNum] = useState<number>(0);
   const dispatch = useDispatch();
 
@@ -79,18 +71,13 @@ const WalletTotalValue = () => {
 
   const getCoinNum = async () => {
     try {
-      const PurchaseInfo = new ethers.Contract(Referral_ADDRESS, Referral_ABI, signer);
-      let ercaddress = "";
-      if (!ERC20Address) {
-        ercaddress = await PurchaseInfo.fetchPaytype();
-        // console.log(ercaddress, "txOne");
-        setERC20Address(ercaddress);
-      }
-      const approvalInfo = new ethers.Contract(ERC20Address || ercaddress, ERC20_ABI, signer);
-
-      const balance = await approvalInfo.balanceOf(userAddress);
-      const num = formatMBTC(bnToNum(balance));
-      setQuintBalance(num);
+      const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+      const tx = await uxdtContract.balanceOf(userAddress);
+      console.log(tx);
+      const balanceVal = bnToNum(tx);
+      const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
+      setBalance(val);
+      console.log(tx, "tx", val);
     } catch (err) {
       console.log({ err });
     }
@@ -141,7 +128,7 @@ const WalletTotalValue = () => {
 
   useEffect(() => {
     try {
-      if (provider && userAddress && networkId === CUR_NETWORK_ID) {
+      if (provider && userAddress) {
         getCoinNum();
       }
     } catch (err) {
@@ -158,7 +145,7 @@ const WalletTotalValue = () => {
             <img src={DClogo} className="icon" />
             <div className="name">{t`UXDT`}</div>
           </div>
-          <div className="count-only">{quintBalance}</div>
+          <div className="count-only">{balance}</div>
         </div>
       </div>
     </Box>

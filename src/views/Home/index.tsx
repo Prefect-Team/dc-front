@@ -13,10 +13,11 @@ import {
 } from "@material-ui/core";
 // import { CUR_NETWORK_ID } from "src/constants/network";
 import { useWeb3Context } from "src/hooks/web3Context";
+import useTronWeb from "src/hooks/useTronWeb";
 import logoImg from "../../assets/images/dc_logo.png";
 import { error } from "../../slices/MessagesSlice";
 import { useDispatch } from "react-redux";
-import { DigitalCurrency_ABI, UXDT_ADDRESS, ERC20_ABI, ERC20_ADDRESS } from "src/contract";
+import { DigitalCurrency_ABI, ERC20_ABI, UXDT_ADDRESS, USD_ADDRESS, BSC_USD_ADDRESS } from "src/contract";
 import { ethers } from "ethers";
 import { bnToNum } from "src/helpers";
 import BN from "bignumber.js";
@@ -25,6 +26,7 @@ export function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 650px)");
   const isVerySmallScreen = useMediaQuery("(max-width: 379px)");
   const { connected, provider, address, networkId } = useWeb3Context();
+  const { userAddress, isTronWeb } = useTronWeb();
   const signer = provider.getSigner();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -78,7 +80,7 @@ export function Home() {
   const buyAction = async () => {
     setLoading(true);
     try {
-      const usdContract = new ethers.Contract(ERC20_ADDRESS, ERC20_ABI, signer);
+      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
       const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
       const txCB = await tx.wait();
       console.log(txCB, "tx");
@@ -118,12 +120,47 @@ export function Home() {
       dispatch(error(t`Fail to sell`));
     }
   };
+  // buyMax
+  const buyMax = async () => {
+    setLoading(true);
+    try {
+      const usdtContract = new ethers.Contract(
+        networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS,
+        DigitalCurrency_ABI,
+        signer,
+      );
+      const tx = await usdtContract.balanceOf(address);
+      console.log(tx);
+      const balanceVal = bnToNum(tx);
+      const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
+      setBuyValue(val);
+      console.log(tx, "tx", val);
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to getBalances`));
+    }
+  };
+  // sellMax
+  const sellMax = () => {
+    setSellValue(balance);
+  };
   useEffect(() => {
+    console.log(isTronWeb, "isTronWeb");
     if (provider && address) {
       getLunchTime();
       getBalances();
     }
   }, [connected]);
+
+  useEffect(() => {
+    if (isTronWeb.connected) {
+      getLunchTime();
+      getBalances();
+    }
+  }, [isTronWeb.connected]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       const timeNow = parseInt((new Date().getTime() / 1000).toString());
@@ -155,7 +192,13 @@ export function Home() {
               <p className="title">Digital Currency</p>
             </div>
             <div className="bottom_cont">
-              <div className="left">{address.slice(0, 7) + "..." + address.slice(-4)}</div>
+              <div className="left">
+                {connected
+                  ? address.slice(0, 7) + "..." + address.slice(-4)
+                  : isTronWeb.connected
+                  ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4)
+                  : "0x0...000"}
+              </div>
               <div className="right">
                 <ul>
                   <li>
@@ -178,11 +221,19 @@ export function Home() {
             <div className="buy_box">
               <div className="left_input">
                 <FormControl variant="standard" className="input_box add_margin">
-                  <Input placeholder="Amount" id="component-simple" value={buyValue} onChange={handleChangeBuyValue} />
+                  <Input
+                    placeholder="Amount"
+                    type="number"
+                    id="component-simple"
+                    value={buyValue}
+                    onChange={handleChangeBuyValue}
+                  />
                 </FormControl>
-                <button>Max</button>
+                <button onClick={buyMax} disabled={!connected}>
+                  Max
+                </button>
               </div>
-              <button className="action_box" onClick={buyAction}>
+              <button className="action_box" disabled={!connected} onClick={buyAction}>
                 Buy
               </button>
             </div>
@@ -192,13 +243,16 @@ export function Home() {
                   <Input
                     placeholder="Amount"
                     id="component-simple"
+                    type="number"
                     value={sellValue}
                     onChange={handleChangeSellValue}
                   />
                 </FormControl>
-                <button>Max</button>
+                <button onClick={sellMax} disabled={!connected}>
+                  Max
+                </button>
               </div>
-              <button className="action_box" onClick={sellAction}>
+              <button className="action_box" disabled={!connected} onClick={sellAction}>
                 Sell
               </button>
             </div>

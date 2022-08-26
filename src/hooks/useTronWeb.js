@@ -4,6 +4,7 @@
  */
 
 import { useState, useEffect } from "react";
+import { useWeb3Context } from "./web3Context";
 
 function getTronWebState() {
   //console.log("LoggedIn:",window.tronWeb.defaultAddress.base58)
@@ -35,6 +36,7 @@ async function requestAccount() {
 export default function useTronWeb() {
   const [userAddress, setUserAddress] = useState("");
   const [isTronWeb, setTronWeb] = useState(getTronWebState());
+  const { connected } = useWeb3Context();
   const [event, setEvent] = useState({
     type: "",
     data: null,
@@ -44,8 +46,10 @@ export default function useTronWeb() {
   /* TronLink injection */
   useEffect(() => {
     if (window.tronLink) {
+      console.log(123);
       handleTronLink();
     } else {
+      console.log(345);
       window.addEventListener("tronLink#initialized", handleTronLink, {
         once: true,
       });
@@ -102,8 +106,9 @@ export default function useTronWeb() {
 
   /* Account injection */
   useEffect(() => {
-    getConnect();
+    // getConnect();
   }, []);
+
   function getConnect() {
     getTronWeb().then(address => {
       setUserAddress(address);
@@ -116,7 +121,8 @@ export default function useTronWeb() {
   /* Handle functions */
   function handleTronLink() {
     const { tronLink } = window;
-    if (tronLink) {
+
+    if (tronLink && !connected) {
       console.log("TronLink detected!");
       console.log("TronWeb obj:", window.tronWeb);
       console.log("TronLink obj:", window.tronLink);

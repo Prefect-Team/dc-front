@@ -100,7 +100,7 @@ function App() {
       setWalletChecked(true);
     }
     if (shouldTriggerSafetyCheck()) {
-      dispatch(info("Safety Check: Always verify you're on quint!"));
+      dispatch(info("Safety Check: Always verify you're on DC!"));
     }
   }, []);
 
