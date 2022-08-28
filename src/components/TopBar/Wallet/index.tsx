@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useWeb3Context } from "src/hooks/web3Context";
 import useTronWeb from "src/hooks/useTronWeb";
 import InitialWalletView from "./InitialWalletView";
+// import Walletconnect from "./Walletconnect"
 // import WalletChose from "./WalletChose";
 import "./style.scss";
 const WalletButton = ({ openWallet }: { openWallet: () => void }) => {
