@@ -11,6 +11,8 @@
       position: absolute;
       left: 0;
       top: 0;
+      height: 100%;
+      object-fit: fill;
     }
     // z-index: -1;
   }
@@ -18,7 +20,7 @@
     position: absolute;
     z-index: 1;
     left: 50%;
-    top: 280px;
+    top: 180px;
     transform: translateY(-50%);
     transform: translateX(-50%);
     .top_box {

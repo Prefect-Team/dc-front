@@ -85,7 +85,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
             <Typography variant="h6" noWrap style={{ lineHeight: 1, paddingTop: "6px" }}>
               <img src={Logo} alt="Quint" className="header-logo" />
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} className="link_box">
               {links.map((link, index) => (
                 <Link href={link.href} underline="none" key={index} onClick={handleCloseNavMenu}>
                   <Typography variant="h6" style={{ fontSize: "17px" }}>
@@ -93,6 +93,9 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                   </Typography>
                 </Link>
               ))}
+              <Link href="https://www.baidu.com" underline="none" className="white_paper">
+                WhitePaper
+              </Link>
             </Box>
             <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: { xs: "flex", md: "none" } }}>
               {anchorElNav ? (
