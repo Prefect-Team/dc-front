@@ -3,7 +3,7 @@ import "./style.scss";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { t } from "@lingui/macro";
-import Logo from "../../assets/images/Vector.png";
+// import Logo from "../../assets/images/Vector.png";
 import MenuClose from "../../assets/icons/nav-close.svg";
 // import Social from "../../components/Sidebar/Social";
 import Wallet from "../TopBar/Wallet";
@@ -83,7 +83,8 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
         <Container>
           <Toolbar disableGutters>
             <Typography variant="h6" noWrap style={{ lineHeight: 1, paddingTop: "6px" }}>
-              <img src={Logo} alt="Quint" className="header-logo" />
+              {/* <img src={Logo} alt="Quint" className="header-logo" /> */}
+              <div className="logo"></div>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} className="link_box">
               {links.map((link, index) => (

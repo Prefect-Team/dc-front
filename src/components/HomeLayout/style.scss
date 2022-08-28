@@ -192,10 +192,15 @@
   }
 }
 .header-logo {
-  width: 100px;
+  width: 40px;
   height: 40px;
   object-fit: contain;
   box-sizing: border-box;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+  background: #fff;
 }
 #menu-appbar {
   a > .MuiTypography-body1 {

@@ -15,6 +15,7 @@ import {
 import { useWeb3Context } from "src/hooks/web3Context";
 import useTronWeb from "src/hooks/useTronWeb";
 import logoImg from "../../assets/images/dc_logo.png";
+import LogoWord from "../../assets/images/digital_currency.svg";
 import { error } from "../../slices/MessagesSlice";
 import { useDispatch } from "react-redux";
 import { DigitalCurrency_ABI, ERC20_ABI, UXDT_ADDRESS, USD_ADDRESS, BSC_USD_ADDRESS } from "src/contract";
@@ -216,7 +217,7 @@ export function Home() {
           <div className="top_box">
             <div className="top_cont">
               <img src={logoImg} />
-              <p className="title">Digital Currency</p>
+              <img src={LogoWord} className="logo_word" />
             </div>
             <div className="bottom_cont">
               <div className="left">

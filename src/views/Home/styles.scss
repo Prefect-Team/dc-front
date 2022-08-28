@@ -48,6 +48,11 @@
           width: 58px;
           height: 58px;
         }
+        .logo_word {
+          width: 275px;
+          height: 36px;
+          margin-left: 16px;
+        }
         .title {
           font-family: "SK Concretica";
           font-style: normal;
@@ -69,6 +74,7 @@
           font-size: 40px;
           line-height: 55px;
           color: #acacac;
+          text-shadow: 0 0 1px #999, 1px 1px 2px #888, 2px 2px 2px #777, 3px 3px 2px #666, 3px 3px 2px #555, 3px 3px 2px #333;
         }
         .right {
           ul {
@@ -197,6 +203,11 @@
             width: 44px;
             height: 44px;
           }
+          .logo_word {
+            width: 199px;
+            height: 31px;
+            margin-left: 16px;
+          }
           .title {
             font-style: normal;
             font-weight: 400;
@@ -225,8 +236,10 @@
               li {
                 .title {
                   font-size: 16.1998px;
+                  font-family: "PingFang SC";
                 }
                 .content {
+                  font-family: "PingFang SC";
                   font-size: 16.1998px;
                 }
               }
@@ -243,6 +256,12 @@
         margin-top: 40px;
         height: auto;
         box-sizing: border-box;
+        .buy_box {
+          button {
+            font-family: "PingFang SC";
+          }
+        }
+
         .sell_box {
           margin-top: 6px;
         }
