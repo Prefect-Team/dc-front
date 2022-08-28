@@ -73,11 +73,11 @@ const WalletTotalValue = () => {
     try {
       const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
       const tx = await uxdtContract.balanceOf(userAddress);
-      console.log(tx);
+      // console.log(tx);
       const balanceVal = bnToNum(tx);
       const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
       setBalance(val);
-      console.log(tx, "tx", val);
+      // console.log(tx, "tx", val);
     } catch (err) {
       console.log({ err });
     }

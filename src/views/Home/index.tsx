@@ -36,7 +36,8 @@ export function Home() {
   const [usdxPrice, setUsdxPrice] = useState("1.00000001");
   const [balance, setBalance] = useState("0.00000000");
   const [worth, setWorth] = useState("0.00000000");
-  console.log(formatUxdt(1000), "测试");
+  const [allowance, setAllowance] = useState(0);
+  // console.log(formatUxdt(1000), "测试");
   const handleChangeBuyValue = (e: any) => {
     setBuyValue(e.target.value);
   };
@@ -51,7 +52,7 @@ export function Home() {
       const tx = await uxdtContract.launchTime();
       const time = bnToNum(tx);
       setLunchTime(time);
-      console.log(tx, "tx", time, loading);
+      // console.log(tx, "tx", time, loading);
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -69,7 +70,7 @@ export function Home() {
       const balanceVal = bnToNum(tx);
       const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
       setBalance(val);
-      console.log(tx, "tx", val);
+      // console.log(tx, "tx", val);
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -77,24 +78,48 @@ export function Home() {
       dispatch(error(t`Fail to getBalances`));
     }
   };
+  // allowance
+  const toAllowance = async () => {
+    try {
+      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+      const allowance = await usdContract.allowance(address, UXDT_ADDRESS);
+      setAllowance(bnToNum(allowance));
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to Allowance`));
+    }
+  };
   // buy
   const buyAction = async () => {
     setLoading(true);
     try {
       const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
-      const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
-      const txCB = await tx.wait();
-      console.log(txCB, "tx");
-      if (txCB.status) {
+      if (allowance === 0) {
+        const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
+        const txCB = await tx.wait();
+        // console.log(txCB, "tx");
+        if (txCB.status) {
+          const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+          const submitValue = formatUxdt(Number(buyValue));
+          console.log(submitValue, "submitValue");
+          const tx = await uxdtContract.Buy(submitValue);
+          const tx2cb = await tx.wait();
+          if (tx2cb.status) {
+            setTimeout(() => window.location.reload(), 1);
+          }
+          // console.log(tx, "[]===");
+        }
+      } else {
         const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-        // const submitValue = new BN(buyValue).multipliedBy(new BN(10).pow(18)).toString();
         const submitValue = formatUxdt(Number(buyValue));
+        // console.log(submitValue, "submitValue");
         const tx = await uxdtContract.Buy(submitValue);
         const tx2cb = await tx.wait();
         if (tx2cb.status) {
           setTimeout(() => window.location.reload(), 1);
         }
-        console.log(tx, "[]===");
       }
       setLoading(false);
     } catch (err) {
@@ -115,7 +140,7 @@ export function Home() {
       if (txcb.status) {
         setTimeout(() => window.location.reload(), 1);
       }
-      console.log(tx, "[]===");
+      // console.log(tx, "[]===");
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -133,11 +158,11 @@ export function Home() {
         signer,
       );
       const tx = await usdtContract.balanceOf(address);
-      console.log(tx);
+      // console.log(tx);
       const balanceVal = bnToNum(tx);
       const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
       setBuyValue(val);
-      console.log(tx, "tx", val);
+      // console.log(tx, "tx", val);
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -154,6 +179,7 @@ export function Home() {
     if (provider && address) {
       getLunchTime();
       getBalances();
+      toAllowance();
     }
   }, [connected]);
 
@@ -237,7 +263,7 @@ export function Home() {
                 </button>
               </div>
               <button className="action_box" disabled={!connected} onClick={buyAction}>
-                Buy
+                {allowance == 0 ? "Approve" : "Buy"}
               </button>
             </div>
             <div className="buy_box sell_box">
