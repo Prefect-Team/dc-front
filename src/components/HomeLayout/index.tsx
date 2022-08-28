@@ -93,7 +93,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                   </Typography>
                 </Link>
               ))}
-              <Link href="https://www.baidu.com" underline="none" className="white_paper">
+              <Link href="#" underline="none" className="white_paper">
                 WhitePaper
               </Link>
             </Box>
