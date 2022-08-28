@@ -9,6 +9,7 @@ import Web3Modal from "web3modal";
 import { NetworkId, NETWORKS } from "../constants";
 
 import BianceWalletLogo from "../assets/images/binance-wallet.png";
+import TronLogo from "../assets/images/tron_logo.png";
 import { CUR_NETWORK_ID } from "src/constants/network";
 
 /**
@@ -47,6 +48,7 @@ export type Web3ContextData = {
 const Web3Context = React.createContext<Web3ContextData>(null);
 
 export const useWeb3Context = () => {
+  // console.log(window, "window");
   const web3Context = useContext(Web3Context);
   if (!web3Context) {
     throw new Error(
@@ -100,6 +102,30 @@ const initModal = new Web3Modal({
           }
         } else {
           throw new Error("No Binance Chain Wallet found");
+        }
+        return provider;
+      },
+    },
+    "custom-Tron": {
+      display: {
+        logo: TronLogo,
+        name: "Tron Chain Wallet",
+        description: "Connect to your Tron Chain Wallet",
+      },
+      package: true,
+      connector: async () => {
+        let provider = null;
+        console.log(window, "windo");
+        if ((window as any).tronWeb && (window as any).tronWeb.defaultAddress.base58) {
+          // const res = await tronLink.request({ method: "tron_requestAccounts" });
+          provider = (window as any).tronWeb;
+          try {
+            await provider.request({ method: "tron_requestAccounts" });
+          } catch (error) {
+            throw new Error("User Rejected");
+          }
+        } else {
+          throw new Error("No Tron Chain Wallet found");
         }
         return provider;
       },
@@ -159,6 +185,7 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
 
   // connect - only runs for WalletProviders
   const connect = useCallback(async () => {
+    console.log(123);
     // handling Ledger Live;
     let rawProvider;
     if (isIframe()) {
