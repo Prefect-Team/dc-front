@@ -91,35 +91,33 @@ export function Home() {
       dispatch(error(t`Fail to Allowance`));
     }
   };
+  // approve
+  const approveAction = async () => {
+    try {
+      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+      const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
+      const txCB = await tx.wait();
+      if (txCB.status) {
+        toAllowance();
+      }
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to approve`));
+    }
+  };
   // buy
   const buyAction = async () => {
     setLoading(true);
     try {
-      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
-      if (allowance === 0) {
-        const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
-        const txCB = await tx.wait();
-        // console.log(txCB, "tx");
-        if (txCB.status) {
-          const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-          const submitValue = formatUxdt(Number(buyValue));
-          console.log(submitValue, "submitValue");
-          const tx = await uxdtContract.Buy(submitValue);
-          const tx2cb = await tx.wait();
-          if (tx2cb.status) {
-            setTimeout(() => window.location.reload(), 1);
-          }
-          // console.log(tx, "[]===");
-        }
-      } else {
-        const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-        const submitValue = formatUxdt(Number(buyValue));
-        // console.log(submitValue, "submitValue");
-        const tx = await uxdtContract.Buy(submitValue);
-        const tx2cb = await tx.wait();
-        if (tx2cb.status) {
-          setTimeout(() => window.location.reload(), 1);
-        }
+      const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+      const submitValue = formatUxdt(Number(buyValue));
+      // console.log(submitValue, "submitValue");
+      const tx = await uxdtContract.Buy(submitValue);
+      const tx2cb = await tx.wait();
+      if (tx2cb.status) {
+        setTimeout(() => window.location.reload(), 1);
       }
       setLoading(false);
     } catch (err) {
@@ -255,6 +253,7 @@ export function Home() {
                     type="number"
                     id="component-simple"
                     value={buyValue}
+                    disabled={allowance == 0}
                     onChange={handleChangeBuyValue}
                   />
                 </FormControl>
@@ -262,9 +261,15 @@ export function Home() {
                   Max
                 </button>
               </div>
-              <button className="action_box" disabled={!connected} onClick={buyAction}>
-                {allowance == 0 ? "Approve" : "Buy"}
-              </button>
+              {allowance == 0 ? (
+                <button className="action_box" disabled={!connected} onClick={approveAction}>
+                  Approve
+                </button>
+              ) : (
+                <button className="action_box" disabled={!connected} onClick={buyAction}>
+                  Buy
+                </button>
+              )}
             </div>
             <div className="buy_box sell_box">
               <div className="left_input">
