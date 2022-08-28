@@ -8,22 +8,36 @@ function Walletconnect() {
   const { connect, connected, address, disconnect } = useWeb3Context();
   const { getConnect, userAddress, isTronWeb, event } = useTronWeb();
   const walletList = [
-    { name: "MetaMask", imgUrl: metamask,content:"Connect to your MetaMask Wallet" },
-    { name: "WalletConnect", imgUrl: scan,content:"Scan with WalletConnect to connect" },
-    { name: "Binance Chain Wallet", imgUrl: BianceWalletLogo,content:"Connect to your Binance Chain Wallet" },
-    { name: "UXDT Chain Wallet", imgUrl: Tron,content:"Connect to your Uxdt Chain Wallet" },
+    { name: "MetaMask", imgUrl: metamask, content: "Connect to your MetaMask Wallet", isWeb3: true },
+    { name: "WalletConnect", imgUrl: scan, content: "Scan with WalletConnect to connect", isWeb3: true },
+    {
+      name: "Binance Chain Wallet",
+      imgUrl: BianceWalletLogo,
+      content: "Connect to your Binance Chain Wallet",
+      isWeb3: true,
+    },
+    { name: "UXDT Chain Wallet", imgUrl: Tron, content: "Connect to your Uxdt Chain Wallet", isWeb3: false },
   ];
   const collectWallet = (item: any) => {
-    console.log(item);
+    if (item.isWeb3) {
+      // console.log(item);
+      connect();
+    } else {
+      getConnect();
+    }
   };
   return (
-    <div className="wallet_chose_box">
+    <div className="chose_box wallet_chose_box">
       <ul>
         {walletList &&
           walletList.map((item, index) => {
             return (
               <li key={index} onClick={() => collectWallet(item)}>
-                <img src={item.imgUrl} />
+                <div className="top">
+                  <img src={item.imgUrl} />
+                  <p className="name">{item.name}</p>
+                </div>
+                <p className="conent_bottom">{item.content}</p>
               </li>
             );
           })}
@@ -31,4 +45,4 @@ function Walletconnect() {
     </div>
   );
 }
-export default WalletChose;
+export default Walletconnect;

@@ -36,7 +36,7 @@ export function Home() {
   const [usdxPrice, setUsdxPrice] = useState("1.00000001");
   const [balance, setBalance] = useState("0.00000000");
   const [worth, setWorth] = useState("0.00000000");
-  console.log(formatUxdt(1000), "测试");
+  // console.log(formatUxdt(1000), "测试");
   const handleChangeBuyValue = (e: any) => {
     setBuyValue(e.target.value);
   };
