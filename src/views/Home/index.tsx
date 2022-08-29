@@ -222,7 +222,7 @@ export function Home() {
             <div className="bottom_cont">
               <div className="left">
                 {connected
-                  ? address.slice(0, 7) + "..." + address.slice(-4)
+                  ? address.slice(0, 4) + "..." + address.slice(-4)
                   : isTronWeb.connected
                   ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4)
                   : "0x0...000"}

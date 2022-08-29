@@ -14,7 +14,7 @@ const WalletButton = ({ openWallet }: { openWallet: () => void }) => {
   // console.log(useTronWeb(), "useTronWeb()");
   const onClick = connected ? openWallet : connect;
   // const onClick = openWallet;
-  const label = connected ? address.slice(0, 7) + "..." + address.slice(-4) : t`Connect Wallet`;
+  const label = connected ? address.slice(0, 4) + "..." + address.slice(-4) : t`Connect Wallet`;
   const tronLabel = isTronWeb.connected ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4) : t`Connect Wallet`;
   const theme = useTheme();
   return (
