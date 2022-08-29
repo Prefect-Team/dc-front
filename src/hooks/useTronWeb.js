@@ -106,7 +106,7 @@ export default function useTronWeb() {
 
   /* Account injection */
   useEffect(() => {
-    // getConnect();
+    getConnect();
   }, []);
 
   function getConnect() {

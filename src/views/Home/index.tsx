@@ -18,7 +18,15 @@ import logoImg from "../../assets/images/dc_logo.png";
 import LogoWord from "../../assets/images/digital_currency.svg";
 import { error } from "../../slices/MessagesSlice";
 import { useDispatch } from "react-redux";
-import { DigitalCurrency_ABI, ERC20_ABI, UXDT_ADDRESS, USD_ADDRESS, BSC_USD_ADDRESS } from "src/contract";
+import {
+  DigitalCurrency_ABI,
+  ERC20_ABI,
+  UXDT_ADDRESS,
+  USD_ADDRESS,
+  BSC_USD_ADDRESS,
+  TRX_UXDT_ADDRESS,
+  TRX_USD_ADDRESS,
+} from "src/contract";
 import { ethers } from "ethers";
 import { bnToNum, formatUxdt } from "src/helpers";
 import BN from "bignumber.js";
@@ -27,7 +35,8 @@ export function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 650px)");
   const isVerySmallScreen = useMediaQuery("(max-width: 379px)");
   const { connected, provider, address, networkId } = useWeb3Context();
-  const { userAddress, isTronWeb } = useTronWeb();
+  const { isTronWeb } = useTronWeb();
+  const userAddress = (window as any).tronWeb.defaultAddress.base58;
   const signer = provider.getSigner();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -62,12 +71,51 @@ export function Home() {
       dispatch(error(t`Fail to getLunchTime`));
     }
   };
+  // getTronLunchTime(tron)
+  const getTronLunchTime = async () => {
+    setLoading(true);
+    try {
+      // const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+      const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
+      const tx = await contract.launchTime().call();
+      console.log(tx, " tron");
+      const time = bnToNum(tx);
+      setLunchTime(time);
+      // console.log(tx, "tx", time, loading);
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to getLunchTime`));
+    }
+  };
   // get balance
   const getBalances = async () => {
     setLoading(true);
     try {
       const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
       const tx = await uxdtContract.balanceOf(address);
+      console.log(tx);
+      const balanceVal = bnToNum(tx);
+      const valSell = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
+      const val = new BN(tx.toString()).div(new BN(10).pow(18)).toFixed(8).toString();
+      setBalance(val);
+      setSellMax(valSell);
+      // console.log(tx, "tx", val);
+      setLoading(false);
+    } catch (err) {
+      console.log({ err });
+      setLoading(false);
+      dispatch(error(t`Fail to getBalances`));
+    }
+  };
+  // getTronBalances(tron)
+  const getTronBalances = async () => {
+    console.log(userAddress, "userAddress");
+    setLoading(true);
+    try {
+      const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
+      const tx = await contract.balanceOf(userAddress).call();
       console.log(tx);
       const balanceVal = bnToNum(tx);
       const valSell = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
@@ -115,13 +163,24 @@ export function Home() {
   const buyAction = async () => {
     setLoading(true);
     try {
-      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
-      const allowance = await usdContract.allowance(address, UXDT_ADDRESS);
-      if (bnToNum(allowance) == 0) {
+      if (connected) {
+        // not tron
         const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
-        const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
-        const txCB = await tx.wait();
-        if (txCB.status) {
+        const allowance = await usdContract.allowance(address, UXDT_ADDRESS);
+        if (bnToNum(allowance) == 0) {
+          const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+          const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
+          const txCB = await tx.wait();
+          if (txCB.status) {
+            const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+            const submitValue = formatUxdt(Number(buyValue));
+            const tx = await uxdtContract.Buy(submitValue);
+            const tx2cb = await tx.wait();
+            if (tx2cb.status) {
+              setTimeout(() => window.location.reload(), 1);
+            }
+          }
+        } else {
           const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
           const submitValue = formatUxdt(Number(buyValue));
           const tx = await uxdtContract.Buy(submitValue);
@@ -131,15 +190,36 @@ export function Home() {
           }
         }
       } else {
-        const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-        const submitValue = formatUxdt(Number(buyValue));
-        const tx = await uxdtContract.Buy(submitValue);
-        const tx2cb = await tx.wait();
-        if (tx2cb.status) {
-          setTimeout(() => window.location.reload(), 1);
+        // tron
+        // const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+        const usdContract = (window as any).tronWeb.contract(ERC20_ABI, TRX_USD_ADDRESS);
+        const allowance = await usdContract.allowance(userAddress, TRX_UXDT_ADDRESS).call();
+        if (bnToNum(allowance) == 0) {
+          // const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+          const usdContract = (window as any).tronWeb.contract(ERC20_ABI, TRX_USD_ADDRESS);
+          const tx = await usdContract.approve(TRX_USD_ADDRESS, maxInt.c?.join("")).call();
+          const txCB = await tx.wait();
+          if (txCB.status) {
+            // const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+            const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_USD_ADDRESS);
+            const submitValue = formatUxdt(Number(buyValue));
+            const tx = await uxdtContract.Buy(submitValue).call();
+            const tx2cb = await tx.wait();
+            if (tx2cb.status) {
+              setTimeout(() => window.location.reload(), 1);
+            }
+          }
+        } else {
+          // const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+          const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_USD_ADDRESS);
+          const submitValue = formatUxdt(Number(buyValue));
+          const tx = await uxdtContract.Buy(submitValue).call();
+          const tx2cb = await tx.wait();
+          if (tx2cb.status) {
+            setTimeout(() => window.location.reload(), 1);
+          }
         }
       }
-
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -151,13 +231,24 @@ export function Home() {
   const sellAction = async () => {
     setLoading(true);
     try {
-      const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-      // const submitValue = new BN(sellValue).multipliedBy(new BN(10).pow(18)).toString();
-      const submitValue = formatUxdt(Number(sellValue));
-      const tx = await uxdtContract.Sell(submitValue);
-      const txcb = await tx.wait();
-      if (txcb.status) {
-        setTimeout(() => window.location.reload(), 1);
+      if (connected) {
+        // NOT TRON
+        const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+        const submitValue = formatUxdt(Number(sellValue));
+        const tx = await uxdtContract.Sell(submitValue);
+        const txcb = await tx.wait();
+        if (txcb.status) {
+          setTimeout(() => window.location.reload(), 1);
+        }
+      } else {
+        // TRON
+        const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
+        const submitValue = formatUxdt(Number(sellValue));
+        const tx = await contract.Sell(submitValue).call();
+        const txcb = await tx.wait();
+        if (txcb.status) {
+          setTimeout(() => window.location.reload(), 1);
+        }
       }
       // console.log(tx, "[]===");
       setLoading(false);
@@ -170,13 +261,22 @@ export function Home() {
   // buyMax
   const buyMax = async () => {
     setLoading(true);
+    console.log(connected, isTronWeb.connected);
     try {
-      const usdtContract = new ethers.Contract(
-        networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS,
-        DigitalCurrency_ABI,
-        signer,
-      );
-      const tx = await usdtContract.balanceOf(address);
+      let tx;
+      if (connected) {
+        // not tron
+        const usdtContract = new ethers.Contract(
+          networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS,
+          DigitalCurrency_ABI,
+          signer,
+        );
+        tx = await usdtContract.balanceOf(address);
+      } else {
+        // tron
+        const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_USD_ADDRESS);
+        tx = await contract.balanceOf(userAddress).call();
+      }
       // const balanceVal = bnToNum(tx);
       console.log(tx);
       const val = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
@@ -204,8 +304,8 @@ export function Home() {
 
   useEffect(() => {
     if (isTronWeb.connected) {
-      getLunchTime();
-      getBalances();
+      getTronLunchTime();
+      getTronBalances();
     }
   }, [isTronWeb.connected]);
 
@@ -275,15 +375,14 @@ export function Home() {
                     type="number"
                     id="component-simple"
                     value={buyValue}
-                    disabled={allowance == 0}
                     onChange={handleChangeBuyValue}
                   />
                 </FormControl>
-                <button onClick={buyMax} disabled={!connected}>
+                <button onClick={buyMax} disabled={!connected && !isTronWeb.connected}>
                   Max
                 </button>
               </div>
-              <button className="action_box" disabled={!connected} onClick={buyAction}>
+              <button className="action_box" disabled={!connected && !isTronWeb.connected} onClick={buyAction}>
                 Buy
               </button>
             </div>
