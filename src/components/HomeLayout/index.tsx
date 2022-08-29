@@ -39,7 +39,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
   const [zoomed, setZoomed] = useState(false);
   const { connected, provider, address, connect } = useWeb3Context();
   const [anchorElNav, setAnchorElNav] = useState(false);
-
+  const [showNavStatus, setNavStatus] = useState(false);
   useEffect(() => {
     const header: HTMLElement = document.querySelector(".fixed-header") as HTMLElement;
     const headroom = new Headroom(header);
@@ -53,7 +53,9 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
   const handleCloseNavMenu = () => {
     setAnchorElNav(false);
   };
-
+  const showNav = () => {
+    setNavStatus(!showNavStatus);
+  };
   const links = [
     {
       name: t`Home`,
@@ -84,7 +86,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
           <Toolbar disableGutters>
             <Typography variant="h6" noWrap style={{ lineHeight: 1, paddingTop: "6px" }}>
               {/* <img src={Logo} alt="Quint" className="header-logo" /> */}
-              <div className="logo"></div>
+              <div className="logo" onClick={showNav}></div>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }} className="link_box">
               {links.map((link, index) => (
@@ -98,6 +100,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                 WhitePaper
               </Link>
             </Box>
+
             <Box sx={{ flexGrow: 1, justifyContent: "flex-end", display: { xs: "flex", md: "none" } }}>
               {anchorElNav ? (
                 <Box onClick={handleCloseNavMenu}>
@@ -136,6 +139,16 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
           </Box>
         </Container>
       </AppBar>
+      {showNavStatus && (isSmallScreen || isVerySmallScreen) ? (
+        <div className="top_nav">
+          <Link href="#" underline="none" className="white_paper">
+            Home
+          </Link>
+          <Link href="#" underline="none" className="white_paper">
+            WhitePaper
+          </Link>
+        </div>
+      ) : null}
       {children}
       <Messages />
       {/* <div className="bottom">

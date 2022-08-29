@@ -418,6 +418,25 @@
       }
     }
   }
+  .top_nav {
+    position: absolute;
+    z-index: 999;
+    top: 70px;
+    width: 85%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    a {
+      font-family: "PingFang SC";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 22px;
+      color: #ffffff;
+    }
+  }
   .bottom {
     // padding-top: 7vh;
     padding: 0 32px;

@@ -258,7 +258,18 @@ export const getGohmBalFromSohm = async ({ provider, networkID, sOHMbalance }: I
   const formattedGohmBal = await gOhmContract.balanceTo(ethers.utils.parseUnits(sOHMbalance, "gwei").toString());
   return ethers.utils.formatEther(formattedGohmBal);
 };
-
+export const formatDecimal = (num: number, decimal = 2) => {
+  const numStr = num.toString();
+  const index = numStr.indexOf(".");
+  let retrunNum;
+  if (index !== -1) {
+    retrunNum = numStr.substring(0, decimal + index + 1);
+  } else {
+    retrunNum = numStr.substring(0);
+  }
+  //截取后保留两位小数
+  return parseFloat(retrunNum).toFixed(decimal);
+};
 /**
  * Formats a number
  */
@@ -271,6 +282,7 @@ export const formatUxdt = (number: number, precision = 0) => {
   const a = new BigNumberEther(number).multipliedBy(Math.pow(10, 18));
   return a.toFixed(precision);
 };
+
 // export const getImage = () => {
 //   return NFTIMAGE;
 // };

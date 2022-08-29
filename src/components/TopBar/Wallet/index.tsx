@@ -6,21 +6,25 @@ import { useState } from "react";
 import { useWeb3Context } from "src/hooks/web3Context";
 import useTronWeb from "src/hooks/useTronWeb";
 import InitialWalletView from "./InitialWalletView";
-// import WalletChose from "./WalletChose";
+import WalletChose from "./WalletChose";
+import tronLogo from "../../../assets/images/tronlink.svg";
 import "./style.scss";
 const WalletButton = ({ openWallet }: { openWallet: () => void }) => {
   const { connect, connected, address } = useWeb3Context();
   const { userAddress, isTronWeb } = useTronWeb();
-  // console.log(useTronWeb(), "useTronWeb()");
   const onClick = connected ? openWallet : connect;
-  // const onClick = openWallet;
   const label = connected ? address.slice(0, 6) + "..." + address.slice(-4) : t`Connect Wallet`;
   const tronLabel = isTronWeb.connected ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4) : t`Connect Wallet`;
   const theme = useTheme();
   return (
-    <Button className="wallet_btn" onClick={onClick}>
-      {connected ? label : tronLabel}
-    </Button>
+    <div className="wallet_chose_box">
+      <Button className="wallet_btn" onClick={onClick}>
+        {connected ? label : tronLabel}
+      </Button>
+      <div className="tron_box">
+        <img src={tronLogo} className="tron-link" />
+      </div>
+    </div>
   );
 };
 
@@ -39,7 +43,7 @@ export function Wallet() {
   return (
     <div className={isWalletOpen ? "wallet_box" : "wallet_box cancle_bg"}>
       <WalletButton openWallet={openWallet} />
-      {/* {!connected && !isTronWeb.connected ? <WalletChose /> : null} */}
+      <WalletChose />
       {connected ? (
         <div className={isWalletOpen ? "wallet_container open_wallet" : "wallet_container"}>
           <InitialWalletView onClose={closeWallet} />

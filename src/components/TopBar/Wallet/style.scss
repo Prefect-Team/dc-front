@@ -99,10 +99,22 @@
       border-radius: 1rem;
     }
   }
+  .wallet_chose_box {
+    display: flex;
+    align-items: center;
+    .tron-link {
+      width: 40px;
+      height: 40px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
   .chose_box {
     width: 78px;
-    height: 120px;
-    background: url("../../../assets/images/wallet_box.png") no-repeat center;
+    height: 40px;
+    // background: url("../../../assets/images/wallet_box.png") no-repeat center;
+    background: linear-gradient(116.29deg, #626262 -16.91%, #535353 101.76%);
+    border-radius: 10px;
     background-size: cover;
     position: absolute;
     left: -90px;
@@ -121,9 +133,26 @@
         img {
           width: 63px;
           height: 30px;
+          opacity: 0;
         }
         &:last-child {
           margin-bottom: 0;
+        }
+        &:first-child {
+          img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    transition: height linear 0.3s;
+  }
+  .show_others {
+    height: 160px;
+    ul {
+      li {
+        img {
+          opacity: 1;
         }
       }
     }
@@ -131,8 +160,8 @@
 }
 .cancle_bg {
   .chose_box {
-    opacity: 0;
-    transition: opacity linear 0.3s;
+    // opacity: 0;
+    transition: height linear 0.3s;
   }
 }
 .cancle_bg {
@@ -253,6 +282,7 @@
 @media (max-width: 750px) {
   .wallet_box {
     .wallet_btn {
+      width: 150px !important;
       color: #fff;
       background: linear-gradient(315.27deg, #dcdcdc 9.83%, #898989 88.84%);
       border-radius: 100px;

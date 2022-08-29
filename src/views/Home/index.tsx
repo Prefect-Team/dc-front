@@ -36,6 +36,7 @@ export function Home() {
   const [sellValue, setSellValue] = useState("");
   const [usdxPrice, setUsdxPrice] = useState("1.00000001");
   const [balance, setBalance] = useState("0.00000000");
+  const [sellMaxVal, setSellMax] = useState("");
   const [worth, setWorth] = useState("0.00000000");
   const [allowance, setAllowance] = useState(0);
   // console.log(formatUxdt(1000), "测试");
@@ -69,8 +70,10 @@ export function Home() {
       const tx = await uxdtContract.balanceOf(address);
       console.log(tx);
       const balanceVal = bnToNum(tx);
-      const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
+      const valSell = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
+      const val = new BN(tx.toString()).div(new BN(10).pow(18)).toFixed(8).toString();
       setBalance(val);
+      setSellMax(valSell);
       // console.log(tx, "tx", val);
       setLoading(false);
     } catch (err) {
@@ -112,14 +115,31 @@ export function Home() {
   const buyAction = async () => {
     setLoading(true);
     try {
-      const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-      const submitValue = formatUxdt(Number(buyValue));
-      // console.log(submitValue, "submitValue");
-      const tx = await uxdtContract.Buy(submitValue);
-      const tx2cb = await tx.wait();
-      if (tx2cb.status) {
-        setTimeout(() => window.location.reload(), 1);
+      const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+      const allowance = await usdContract.allowance(address, UXDT_ADDRESS);
+      if (bnToNum(allowance) == 0) {
+        const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
+        const tx = await usdContract.approve(UXDT_ADDRESS, maxInt.c?.join(""));
+        const txCB = await tx.wait();
+        if (txCB.status) {
+          const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+          const submitValue = formatUxdt(Number(buyValue));
+          const tx = await uxdtContract.Buy(submitValue);
+          const tx2cb = await tx.wait();
+          if (tx2cb.status) {
+            setTimeout(() => window.location.reload(), 1);
+          }
+        }
+      } else {
+        const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
+        const submitValue = formatUxdt(Number(buyValue));
+        const tx = await uxdtContract.Buy(submitValue);
+        const tx2cb = await tx.wait();
+        if (tx2cb.status) {
+          setTimeout(() => window.location.reload(), 1);
+        }
       }
+
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -171,7 +191,7 @@ export function Home() {
   };
   // sellMax
   const sellMax = () => {
-    setSellValue(balance);
+    setSellValue(sellMaxVal);
   };
   useEffect(() => {
     console.log(isTronWeb, "isTronWeb");
@@ -213,6 +233,7 @@ export function Home() {
             className="coin-vedio"
           ></video>
         </div>
+
         <div className="container_box">
           <div className="top_box">
             <div className="top_cont">
@@ -262,15 +283,9 @@ export function Home() {
                   Max
                 </button>
               </div>
-              {allowance == 0 ? (
-                <button className="action_box" disabled={!connected} onClick={approveAction}>
-                  Approve
-                </button>
-              ) : (
-                <button className="action_box" disabled={!connected} onClick={buyAction}>
-                  Buy
-                </button>
-              )}
+              <button className="action_box" disabled={!connected} onClick={buyAction}>
+                Buy
+              </button>
             </div>
             <div className="buy_box sell_box">
               <div className="left_input">
