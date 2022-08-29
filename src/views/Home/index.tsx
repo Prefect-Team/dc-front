@@ -159,7 +159,7 @@ export function Home() {
       const tx = await usdtContract.balanceOf(address);
       // console.log(tx);
       const balanceVal = bnToNum(tx);
-      const val = new BN(balanceVal).div(new BN(10).pow(18)).toFixed(8).toString();
+      const val = new BN(balanceVal).div(new BN(10).pow(18)).toString();
       setBuyValue(val);
       // console.log(tx, "tx", val);
       setLoading(false);
@@ -250,7 +250,7 @@ export function Home() {
               <div className="left_input">
                 <FormControl variant="standard" className="input_box add_margin">
                   <Input
-                    placeholder="Amount"
+                    placeholder="USD"
                     type="number"
                     id="component-simple"
                     value={buyValue}
@@ -276,7 +276,7 @@ export function Home() {
               <div className="left_input">
                 <FormControl variant="standard" className="input_box add_margin">
                   <Input
-                    placeholder="Amount"
+                    placeholder="UXDT"
                     id="component-simple"
                     type="number"
                     value={sellValue}
