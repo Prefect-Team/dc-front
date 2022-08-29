@@ -157,11 +157,11 @@ export function Home() {
         signer,
       );
       const tx = await usdtContract.balanceOf(address);
-      // console.log(tx);
-      const balanceVal = bnToNum(tx);
-      const val = new BN(balanceVal).div(new BN(10).pow(18)).toString();
+      // const balanceVal = bnToNum(tx);
+      console.log(tx);
+      const val = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
       setBuyValue(val);
-      // console.log(tx, "tx", val);
+      console.log(tx, "tx", val);
       setLoading(false);
     } catch (err) {
       console.log({ err });
@@ -222,7 +222,7 @@ export function Home() {
             <div className="bottom_cont">
               <div className="left">
                 {connected
-                  ? address.slice(0, 4) + "..." + address.slice(-4)
+                  ? address.slice(0, 6) + "..." + address.slice(-4)
                   : isTronWeb.connected
                   ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4)
                   : "0x0...000"}
