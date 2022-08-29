@@ -6,13 +6,14 @@ import { useState } from "react";
 import { useWeb3Context } from "src/hooks/web3Context";
 import useTronWeb from "src/hooks/useTronWeb";
 import InitialWalletView from "./InitialWalletView";
-import Walletconnect from "./Walletconnect";
+// import Walletconnect from "./Walletconnect";
 // import WalletChose from "./WalletChose";
 import "./style.scss";
 const WalletButton = ({ openWallet }: { openWallet: () => void }) => {
   const { connect, connected, address } = useWeb3Context();
   const { userAddress, isTronWeb } = useTronWeb();
-  const onClick = connected ? openWallet : connect;
+  console.log(connected, address, userAddress, isTronWeb, "isTronWeb");
+  const onClick = connected || isTronWeb.connected ? openWallet : connect;
   // const onClick = openWallet;
   const label = connected ? address.slice(0, 7) + "..." + address.slice(-4) : t`Connect Wallet`;
   const tronLabel = isTronWeb.connected ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4) : t`Connect Wallet`;
@@ -29,13 +30,8 @@ export function Wallet() {
   const closeWallet = () => setWalletOpen(false);
   const { connect, connected, address } = useWeb3Context();
   const { userAddress, isTronWeb } = useTronWeb();
-  const [openConnect, setOpenConnect] = useState(false);
   const openWallet = () => {
     setWalletOpen(!isWalletOpen);
-    setOpenConnect(!openConnect);
-  };
-  const onpenConnect = () => {
-    setOpenConnect(!openConnect);
   };
   // only enable backdrop transition on ios devices,
   // because we can assume IOS is hosted on hight-end devices and will not drop frames
@@ -45,8 +41,7 @@ export function Wallet() {
     <div className={isWalletOpen ? "wallet_box" : "wallet_box cancle_bg"}>
       <WalletButton openWallet={openWallet} />
       {/* {!connected && !isTronWeb.connected ? <WalletChose /> : null} */}
-      {openConnect ? <Walletconnect /> : null}
-      {connected ? (
+      {connected || isTronWeb.connected ? (
         <div className={isWalletOpen ? "wallet_container open_wallet" : "wallet_container"}>
           <InitialWalletView onClose={closeWallet} />
         </div>
