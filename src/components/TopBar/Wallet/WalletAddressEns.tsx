@@ -9,12 +9,13 @@ import { error, info } from "../../../slices/MessagesSlice";
 
 export default function WalletAddressEns() {
   const { data: ens } = useEns();
-  const { address } = useWeb3Context();
+  const { address, connected } = useWeb3Context();
   const isSmallScreen = useMediaQuery("(max-width: 650px)");
   const isVerySmallScreen = useMediaQuery("(max-width: 379px)");
   const dispatch = useDispatch();
-  const content = ens?.name || shorten(address);
-  if (!address) return null;
+  // console.log(connected, (window as any).tronWeb.defaultAddress.base58, "connec");
+  const content = ens?.name || shorten(connected ? address : (window as any).tronWeb.defaultAddress.base58);
+  // if (!address) return null;
   const goCopy = (text: string) => {
     if (copy(text)) {
       dispatch(info("Copied!"));
@@ -25,7 +26,6 @@ export default function WalletAddressEns() {
   return (
     <div className="wallet-link">
       {ens?.avatar && <img className="avatar" src={ens.avatar} alt={address} />}
-
       <Link href={`https://testnet.bscscan.com/address/${address}`} target="_blank">
         {content}
       </Link>

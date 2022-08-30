@@ -14,10 +14,11 @@ import {
   NFTMiner_ADDRESS,
 } from "src/contract";
 import { useAppSelector, useWeb3Context } from "src/hooks";
+import useTronWeb from "src/hooks/useTronWeb";
 import useCurrentTheme from "src/hooks/useTheme";
 import DClogo from "../../../assets/images/dc_logo.png";
 import WalletAddressEns from "./WalletAddressEns";
-import { DigitalCurrency_ABI, UXDT_ADDRESS } from "src/contract";
+import { DigitalCurrency_ABI, UXDT_ADDRESS, TRX_UXDT_ADDRESS } from "src/contract";
 import { useDispatch } from "react-redux";
 import { Encrypt } from "src/helpers/aes";
 import baseUrl from "src/helpers/baseUrl";
@@ -43,6 +44,7 @@ const CloseButton = withStyles(theme => ({
 
 const WalletTotalValue = () => {
   const { address: userAddress, provider, networkId, providerInitialized, connected } = useWeb3Context();
+  const { isTronWeb } = useTronWeb();
   const signer = provider.getSigner();
   const isLoading = useAppSelector(s => s.app.loading);
   const marketPrice = useAppSelector(s => s.app.marketPrice || 0);
@@ -52,6 +54,7 @@ const WalletTotalValue = () => {
   const [ERC20Address, setERC20Address] = useState("");
   const [quintBalance, setQuintBalance] = useState("0");
   const [balance, setBalance] = useState("0.00000000");
+  const userTronAddress = (window as any).tronWeb.defaultAddress.base58;
   const [num, setNum] = useState<number>(0);
   const dispatch = useDispatch();
 
@@ -82,7 +85,22 @@ const WalletTotalValue = () => {
       console.log({ err });
     }
   };
-
+  // tron balance
+  // getTronBalances(tron)
+  const getTronBalances = async () => {
+    try {
+      const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
+      const tx = await contract.balanceOf(userTronAddress).call();
+      console.log(tx);
+      const balanceVal = bnToNum(tx);
+      const valSell = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
+      const val = new BN(tx.toString()).div(new BN(10).pow(18)).toFixed(8).toString();
+      setBalance(val);
+      // console.log(tx, "tx", val);
+    } catch (err) {
+      console.log({ err });
+    }
+  };
   /** nft质押中的数量 **/
   const minerAmountOf = async (address: string) => {
     try {
@@ -135,7 +153,11 @@ const WalletTotalValue = () => {
       console.log(err);
     }
   }, [networkId, connected]);
-
+  useEffect(() => {
+    if (isTronWeb.connected) {
+      getTronBalances();
+    }
+  }, [isTronWeb.connected]);
   return (
     <Box className="tooBar-container toobar_container" onClick={() => setCurrency(currency === "USD" ? "OHM" : "USD")}>
       <WalletAddressEns />

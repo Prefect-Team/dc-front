@@ -175,13 +175,6 @@ export default function useTronWeb() {
       msg: data.message,
     });
   }
-  // const handleDisConnect = useCallback(async () => {
-  //   window.tronWeb.handleConnection
-  //   setTimeout(() => {
-  //     window.location.reload();
-  //   }, 1);
-  //   setUserAddress("");
-  // }, [userAddress]);
   function handleDisConnect() {
     setTronWeb({
       installed: false,

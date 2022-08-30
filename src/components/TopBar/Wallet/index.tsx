@@ -12,7 +12,7 @@ import "./style.scss";
 const WalletButton = ({ openWallet }: { openWallet: () => void }) => {
   const { connect, connected, address } = useWeb3Context();
   const { userAddress, isTronWeb, getConnect } = useTronWeb();
-  const onClick = connected ? openWallet : connect;
+  const onClick = connected || isTronWeb.connected ? openWallet : connect;
   const label = connected ? address.slice(0, 6) + "..." + address.slice(-4) : t`Connect Wallet`;
   const tronLabel = isTronWeb.connected ? userAddress.slice(0, 7) + "..." + userAddress.slice(-4) : t`Connect Wallet`;
   const theme = useTheme();
@@ -45,7 +45,7 @@ export function Wallet() {
     <div className={isWalletOpen ? "wallet_box" : "wallet_box cancle_bg"}>
       <WalletButton openWallet={openWallet} />
       <WalletChose />
-      {connected ? (
+      {connected || isTronWeb.connected ? (
         <div className={isWalletOpen ? "wallet_container open_wallet" : "wallet_container"}>
           <InitialWalletView onClose={closeWallet} />
         </div>

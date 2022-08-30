@@ -116,7 +116,7 @@ export function Home() {
     try {
       const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
       const tx = await contract.balanceOf(userAddress).call();
-      console.log(tx);
+      console.log(tx, "余额");
       const balanceVal = bnToNum(tx);
       const valSell = new BN(tx.toString()).div(new BN(10).pow(18)).toString();
       const val = new BN(tx.toString()).div(new BN(10).pow(18)).toFixed(8).toString();
@@ -193,30 +193,34 @@ export function Home() {
         // tron
         // const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
         const usdContract = (window as any).tronWeb.contract(ERC20_ABI, TRX_USD_ADDRESS);
+        console.log(usdContract, "usdContract");
         const allowance = await usdContract.allowance(userAddress, TRX_UXDT_ADDRESS).call();
+        console.log(allowance, "allowance");
         if (bnToNum(allowance) == 0) {
           // const usdContract = new ethers.Contract(networkId == 4 ? USD_ADDRESS : BSC_USD_ADDRESS, ERC20_ABI, signer);
           const usdContract = (window as any).tronWeb.contract(ERC20_ABI, TRX_USD_ADDRESS);
-          const tx = await usdContract.approve(TRX_USD_ADDRESS, maxInt.c?.join("")).call();
-          const txCB = await tx.wait();
-          if (txCB.status) {
+          const tx = await usdContract.approve(TRX_UXDT_ADDRESS, maxInt.c?.join("")).send();
+          console.log(tx, "status");
+          // const txCB = await tx.wait();
+          if (tx) {
             // const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-            const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_USD_ADDRESS);
+            const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
             const submitValue = formatUxdt(Number(buyValue));
             const tx = await uxdtContract.Buy(submitValue).call();
-            const tx2cb = await tx.wait();
-            if (tx2cb.status) {
+            // const tx2cb = await tx.wait();
+            if (tx) {
               setTimeout(() => window.location.reload(), 1);
             }
           }
         } else {
           // const uxdtContract = new ethers.Contract(UXDT_ADDRESS, DigitalCurrency_ABI, signer);
-          const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_USD_ADDRESS);
+          const uxdtContract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
           const submitValue = formatUxdt(Number(buyValue));
-          const tx = await uxdtContract.Buy(submitValue).call();
-          const tx2cb = await tx.wait();
-          if (tx2cb.status) {
-            setTimeout(() => window.location.reload(), 1);
+          const tx = await uxdtContract.Buy(submitValue).send();
+          console.log(tx, "status");
+          // const tx2cb = await tx.wait();
+          if (tx) {
+            setTimeout(() => window.location.reload(), 500);
           }
         }
       }
@@ -238,16 +242,16 @@ export function Home() {
         const tx = await uxdtContract.Sell(submitValue);
         const txcb = await tx.wait();
         if (txcb.status) {
-          setTimeout(() => window.location.reload(), 1);
+          setTimeout(() => window.location.reload(), 500);
         }
       } else {
         // TRON
         const contract = (window as any).tronWeb.contract(DigitalCurrency_ABI, TRX_UXDT_ADDRESS);
         const submitValue = formatUxdt(Number(sellValue));
-        const tx = await contract.Sell(submitValue).call();
-        const txcb = await tx.wait();
-        if (txcb.status) {
-          setTimeout(() => window.location.reload(), 1);
+        const tx = await contract.Sell(submitValue).send();
+        // const txcb = await tx.wait();
+        if (tx) {
+          setTimeout(() => window.location.reload(), 500);
         }
       }
       // console.log(tx, "[]===");
@@ -397,11 +401,11 @@ export function Home() {
                     onChange={handleChangeSellValue}
                   />
                 </FormControl>
-                <button onClick={sellMax} disabled={!connected}>
+                <button onClick={sellMax} disabled={!connected && !isTronWeb.connected}>
                   Max
                 </button>
               </div>
-              <button className="action_box" disabled={!connected} onClick={sellAction}>
+              <button className="action_box" disabled={!connected && !isTronWeb.connected} onClick={sellAction}>
                 Sell
               </button>
             </div>
